@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://poems.github.io/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-11-02T11:15:21+00:00</updated>
+  <updated>2013-11-02T11:27:38+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A Blank Page for Test]]></title>
+    <link href="http://poems.github.io/blog/2013/11/02/a-blank-page-for-test/"/>
+    <updated>2013-11-02T11:23:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/11/02/a-blank-page-for-test</id>
+    <content type="html"><![CDATA[<h1>A Blank Page for Test</h1>
+]]></content>
+  </entry>
   
 </feed>
