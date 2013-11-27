@@ -9,7 +9,13 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="学习下Lisp的宏（macro）。 首先，区别：Lisp宏和键盘宏（keyboard macro）是两个不同的概念。 一个LISP宏(Lisp Macro)是� &hellip;">
+  <meta name="description" content="安装使用package-install，实际上可以写一个简易方法避免重复劳动： 1
+2
+3
+4
+5
+6
+(defun require-package (package) "Install given &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +71,143 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/24/ease-life-with-yasnippet/">Ease Life With YASnippet</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-24T01:44:00+00:00" pubdate data-updated="true">Nov 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>安装使用<code>package-install</code>，实际上可以写一个简易方法避免重复劳动：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(defun require-package (package)
+</span><span class='line'>  "Install given PACKAGE."
+</span><span class='line'>  (unless (package-installed-p package)
+</span><span class='line'>    (unless (assoc package package-archive-contents)
+</span><span class='line'>      (package-refresh-contents))
+</span><span class='line'>    (package-install package)))
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>学习下其中的1个function</p>
+
+<p><code>assoc</code> is a built-in function in `C source code&#8217;.</p>
+
+<p>&#8220;`
+(assoc KEY LIST)</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>&gt; Return non-nil if KEY is `equal' to the car of an element of LIST.
+</span><span class='line'>The value is actually the first element of LIST whose car equals KEY.
+</span><span class='line'>
+</span><span class='line'>开始学习如何使用YASnippet。
+</span><span class='line'>
+</span><span class='line'>**1 组织你的 Snippets** (*Organizing Snippets*)
+</span><span class='line'>
+</span><span class='line'>Snippet的定义是储存在文件系统的文件中。YASnippet的触发机制会找到这些snippet tables，然后展开。
+</span><span class='line'>
+</span><span class='line'>首先，新建一个目录：my-snippets，用来存放自定义的snippets。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>(require &lsquo;yasnippet)</p>
+
+<p>(setq yas-snippet-dirs (concat user-emacs-directory &ldquo;my-snippets&rdquo;))</p>
+
+<p>(add-hook &lsquo;prog-mode-hook &#8216;yas-minor-mode)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>看下是怎么组织snippets的（这是YASnippet自带的）：
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>snippets tree -a . | head -n 20                                                                                                                      system
+.
+├── c++-mode
+│   ├── .yas-parents
+│   ├── beginend
+│   ├── class
+│   ├── ns
+│   ├── template
+│   └── using
+├── c-mode
+│   ├── .yas-parents
+│   ├── fopen
+│   └── printf
+├── cc-mode
+│   ├── .yas-parents
+│   ├── do
+│   ├── for
+│   ├── if
+│   ├── inc
+│   ├── inc.1
+│   ├── main</p>
+
+<p>&#8220;`</p>
+
+<p><code>.yas.parent</code>文件可以共享其他目录下的snippets。</p>
+
+<p>如果有一个空的<code>.yas-make-groups</code>文件，会在 YASnippet Menu按照目录结构组织地更清晰。</p>
+
+<p><strong>2 展开你的 Snippets</strong> (<em>Traiggering expansion</em>)</p>
+
+<p>很多中方式能展开snippets，包括：</p>
+
+<ul>
+<li><p>By typing an abbrev, the snippet trigger key, and then pressing the key defined in yas/trigger-key (which defaults to &ldquo;TAB&rdquo;). This works in buffers where the minor mode yas/minor-mode is active;</p></li>
+<li><p>By invoking the command yas/insert-snippet (either by typing M-x yas/insert-snippet or its keybinding). This does not require yas/minor-mode to be active.</p></li>
+<li><p>By using hippie-expand</p></li>
+</ul>
+
+
+<p>以上是3中最常见的方法（虽然我不知道什么是 hippie-expand）。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -173,7 +316,9 @@ The return value is undefined.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<p>宏还有一种写法，就是使用反引用（Backquote）。</p>
 
+<p>我们可以用 &lsquo; 引用一个对象并不执行.我们还可以用 反引用 ` 引用一个列表, 但是只是选择性的执行列表的元素.</p>
 </div>
   
   
@@ -271,6 +416,14 @@ particular subfeatures supported in this version of FEATURE.</p>
 <p><code>iswitchb-mode</code> replaces the default C-x b behaviour with a very intuitive buffer-switching-with-completion system.</p>
 
 <p>The related commands are <code>C-x b</code>, <code>C-s</code> and <code>C-r</code>.</p>
+
+<hr />
+
+<p>emacs <code>dired</code> mode.</p>
+
+<p><code>C-x C-j</code>: (dired-jump to current file)
+<code>R</code> to rename the file (or &lsquo;dired-do-rename&rsquo;).
+<code>C-x k RET</code> to go back to the (renamed) buffer</p>
 
 <hr />
 </div>
@@ -743,6 +896,10 @@ particular subfeatures supported in this version of FEATURE.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/24/ease-life-with-yasnippet/">Ease Life With YASnippet</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/11/23/macro-and-defmacro-in-emacs/">Macro &amp; Defmacro in Emacs</a>
