@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://poems.github.io/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-11-27T23:20:56+00:00</updated>
+  <updated>2013-11-27T23:30:54+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JRuby Small Memos]]></title>
+    <link href="http://poems.github.io/blog/2013/11/27/jruby-small-memos/"/>
+    <updated>2013-11-27T23:22:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/11/27/jruby-small-memos</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ jruby --version</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ jruby -e "puts 'This is a short program'" 
+</span><span class='line'>This is a short program</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ jirb
+</span><span class='line'>irb(main):001:0&gt; ['Hello', 'world'].join ' ' 
+</span><span class='line'>=&gt; "Hello world"
+</span><span class='line'>irb(main):002:0&gt; "ybuRJ morf".reverse
+</span><span class='line'>=&gt; ufrom JRuby"
+</span><span class='line'>irb(main):003:0&gt;</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ease Life with YASnippet]]></title>
