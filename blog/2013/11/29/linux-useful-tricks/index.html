@@ -5,14 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Octopress Blog</title>
+  <title>Linux Useful Tricks - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="Blog Archive 2013 Linux Useful Tricks
-Nov 29 2013 JRuby Small Memos
-Nov 27 2013 Ease Life with YASnippet
-Nov 24 2013 posted in Emacs macro &amp; &hellip;">
+  <meta name="description" content="man 命令 1 使用者在shell中可以操作的指令或可执行档
+2 系統核心可呼叫的函数与工具等
+3 一些常用的函数(function)� &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +20,7 @@ Nov 24 2013 posted in Emacs macro &amp; &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://poems.github.io/blog/archives">
+  <link rel="canonical" href="http://poems.github.io/blog/2013/11/29/linux-useful-tricks">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
@@ -67,107 +66,210 @@ Nov 24 2013 posted in Emacs macro &amp; &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Linux Useful Tricks</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-29T08:18:00+00:00" pubdate data-updated="true">Nov 29<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><h2>man 命令</h2>
 
-  
-  <h2>2013</h2>
+<p><code>
+1   使用者在shell中可以操作的指令或可执行档
+2   系統核心可呼叫的函数与工具等
+3   一些常用的函数(function)与函数库(library)，大部分是C的函数库(libc)
+4   装置档案的说明，通常在/dev下的档案
+5   设定档或者是某些档案的格式
+6   游戏(games)
+7   惯例与协定等，例如Linux档案系统、网络协定、ASCII code等等的說明
+8   系統管理員可用的管理指令
+9   跟kernel有关的文件
+</code></p>
 
-<article>
-  
-<h1><a href="/blog/2013/11/29/linux-useful-tricks/">Linux Useful Tricks</a></h1>
-<time datetime="2013-11-29T08:18:00+00:00" pubdate><span class='month'>Nov</span> <span class='day'>29</span> <span class='year'>2013</span></time>
+<h2>tree 命令</h2>
 
+<p><code>
+tree
+-a
+-A
+-C
+man tree
+</code></p>
 
-</article>
+<h1>shell 快捷键</h1>
 
+<p>编辑命令
+<code>
+Ctrl + a ：移到命令行首
+Ctrl + e ：移到命令行尾
+Ctrl + f ：按字符前移（右向）
+Ctrl + b ：按字符后移（左向）
+Alt + f ：按单词前移（右向）
+Alt + b ：按单词后移（左向）
+Ctrl + u ：从光标处删除至命令行首
+Ctrl + k ：从光标处删除至命令行尾
+Ctrl + d ：删除光标处的字符
+Ctrl + y ：粘贴至光标后
+</code></p>
 
+<p>重新执行命令
+<code>
+Ctrl + r：逆向搜索命令历史
+Ctrl + g：从历史搜索模式退出
+Ctrl + p：历史中的上一条命令
+Ctrl + n：历史中的下一条命令
+</code></p>
 
-<article>
-  
-<h1><a href="/blog/2013/11/27/jruby-small-memos/">JRuby Small Memos</a></h1>
-<time datetime="2013-11-27T23:22:00+00:00" pubdate><span class='month'>Nov</span> <span class='day'>27</span> <span class='year'>2013</span></time>
+<p>控制命令
+<code>
+Ctrl + l：清屏
+Ctrl + s：阻止屏幕输出
+Ctrl + q：允许屏幕输出
+Ctrl + c：终止命令
+Ctrl + z：挂起命令
+</code></p>
 
+<h2>grep 命令</h2>
 
-</article>
+<p><code>
+grep
+-v
+-E
+-i
+-n
+</code>
+简单的正则表达式：</p>
 
+<p><code>
+^
+$
+.
+*
+*+
+[Gg], [A-Za-z]
+\&lt;
+\&gt;
+</code></p>
 
+<h2>进程相关</h2>
 
-<article>
-  
-<h1><a href="/blog/2013/11/24/ease-life-with-yasnippet/">Ease Life with YASnippet</a></h1>
-<time datetime="2013-11-24T01:44:00+00:00" pubdate><span class='month'>Nov</span> <span class='day'>24</span> <span class='year'>2013</span></time>
+<p><code>
+ps -aux | grep process-name
+pgrep
+kill
+pkill
+killall
+</code></p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/emacs/'>Emacs</a></span>
-</footer>
+<h2>find</h2>
 
+<p><code>
+find -name
+find -not -name
+-i
+-type fdl
+-mindepth 3
+-maxdepth 3
+-exec ls -l {} \;
+| xargs ls -l
+</code></p>
 
-</article>
+<h2>其他</h2>
 
+<p>&#8220;
+touch
+alias
+history
+sudo !!
+cd &ndash;
+wc
+chmod
+du -hd 1
+du -h &mdash;max-depth=1
+Ctrl-Z
+fg</p>
 
+<blockquote><p>.gitignore
+&lt; .gitignore
+mv filename.{old,new}
+rm !(<em>.foo|</em>.bar|*.baz)
+&#8220;</p></blockquote>
 
-<article>
-  
-<h1><a href="/blog/2013/11/23/macro-and-defmacro-in-emacs/">macro &amp; defmacro in Emacs</a></h1>
-<time datetime="2013-11-23T16:42:00+00:00" pubdate><span class='month'>Nov</span> <span class='day'>23</span> <span class='year'>2013</span></time>
+<h2>git 相关</h2>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/emacs/'>Emacs</a></span>
-</footer>
+<p><code>
+git add -A
+git reset --soft
+git reset --mixed
+git reset --hard
+</code></p>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/11/23/a-growing-emacser/">A Growing Emacser</a></h1>
-<time datetime="2013-11-23T16:00:00+00:00" pubdate><span class='month'>Nov</span> <span class='day'>23</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/emacs/'>Emacs</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/11/23/a-example-of-writing-exception-in-java/">A example of writing Exception in java</a></h1>
-<time datetime="2013-11-23T07:49:00+00:00" pubdate><span class='month'>Nov</span> <span class='day'>23</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/java/'>Java</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/11/02/a-blank-page-for-test/">A Blank Page for Test</a></h1>
-<time datetime="2013-11-02T11:23:00+00:00" pubdate><span class='month'>Nov</span> <span class='day'>02</span> <span class='year'>2013</span></time>
-
-
-</article>
-
+<h2>学习资料推荐</h2>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-29T08:18:00+00:00" pubdate data-updated="true">Nov 29<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://poems.github.io/blog/2013/11/29/linux-useful-tricks/" data-via="" data-counturl="http://poems.github.io/blog/2013/11/29/linux-useful-tricks/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/27/jruby-small-memos/" title="Previous Post: JRuby Small Memos">&laquo; JRuby Small Memos</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

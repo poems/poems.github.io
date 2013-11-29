@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://poems.github.io/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-11-27T23:30:54+00:00</updated>
+  <updated>2013-11-29T08:20:12+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,147 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linux Useful Tricks]]></title>
+    <link href="http://poems.github.io/blog/2013/11/29/linux-useful-tricks/"/>
+    <updated>2013-11-29T08:18:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/11/29/linux-useful-tricks</id>
+    <content type="html"><![CDATA[<h2>man 命令</h2>
+
+<p><code>
+1   使用者在shell中可以操作的指令或可执行档
+2   系統核心可呼叫的函数与工具等
+3   一些常用的函数(function)与函数库(library)，大部分是C的函数库(libc)
+4   装置档案的说明，通常在/dev下的档案
+5   设定档或者是某些档案的格式
+6   游戏(games)
+7   惯例与协定等，例如Linux档案系统、网络协定、ASCII code等等的說明
+8   系統管理員可用的管理指令
+9   跟kernel有关的文件
+</code></p>
+
+<h2>tree 命令</h2>
+
+<p><code>
+tree
+-a
+-A
+-C
+man tree
+</code></p>
+
+<h1>shell 快捷键</h1>
+
+<p>编辑命令
+<code>
+Ctrl + a ：移到命令行首
+Ctrl + e ：移到命令行尾
+Ctrl + f ：按字符前移（右向）
+Ctrl + b ：按字符后移（左向）
+Alt + f ：按单词前移（右向）
+Alt + b ：按单词后移（左向）
+Ctrl + u ：从光标处删除至命令行首
+Ctrl + k ：从光标处删除至命令行尾
+Ctrl + d ：删除光标处的字符
+Ctrl + y ：粘贴至光标后
+</code></p>
+
+<p>重新执行命令
+<code>
+Ctrl + r：逆向搜索命令历史
+Ctrl + g：从历史搜索模式退出
+Ctrl + p：历史中的上一条命令
+Ctrl + n：历史中的下一条命令
+</code></p>
+
+<p>控制命令
+<code>
+Ctrl + l：清屏
+Ctrl + s：阻止屏幕输出
+Ctrl + q：允许屏幕输出
+Ctrl + c：终止命令
+Ctrl + z：挂起命令
+</code></p>
+
+<h2>grep 命令</h2>
+
+<p><code>
+grep
+-v
+-E
+-i
+-n
+</code>
+简单的正则表达式：</p>
+
+<p><code>
+^
+$
+.
+*
+*+
+[Gg], [A-Za-z]
+\&lt;
+\&gt;
+</code></p>
+
+<h2>进程相关</h2>
+
+<p><code>
+ps -aux | grep process-name
+pgrep
+kill
+pkill
+killall
+</code></p>
+
+<h2>find</h2>
+
+<p><code>
+find -name
+find -not -name
+-i
+-type fdl
+-mindepth 3
+-maxdepth 3
+-exec ls -l {} \;
+| xargs ls -l
+</code></p>
+
+<h2>其他</h2>
+
+<p>&#8220;
+touch
+alias
+history
+sudo !!
+cd &ndash;
+wc
+chmod
+du -hd 1
+du -h &mdash;max-depth=1
+Ctrl-Z
+fg</p>
+
+<blockquote><p>.gitignore
+&lt; .gitignore
+mv filename.{old,new}
+rm !(<em>.foo|</em>.bar|*.baz)
+&#8220;</p></blockquote>
+
+<h2>git 相关</h2>
+
+<p><code>
+git add -A
+git reset --soft
+git reset --mixed
+git reset --hard
+</code></p>
+
+<h2>学习资料推荐</h2>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JRuby Small Memos]]></title>
