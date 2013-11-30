@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Emacs Survial with Evil &amp; Family - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="1 概览 1.1 安装 evil 从网上找到的一个简易的方法，easy to be understood: 1
+2
+3
+4
+5
+6
+(defun require-package (package) "Install given &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://poems.github.io/blog/2013/11/29/emacs-survial-with-evil-and-family">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:poems.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Emacs Survial With Evil &amp; Family</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-29T23:33:00+00:00" pubdate data-updated="true">Nov 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>1 概览</h1>
+
+<h2>1.1 安装 evil</h2>
+
+<p>从网上找到的一个简易的方法，easy to be understood:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(defun require-package (package)
+</span><span class='line'>  "Install given PACKAGE."
+</span><span class='line'>  (unless (package-installed-p package)
+</span><span class='line'>    (unless (assoc package package-archive-contents)
+</span><span class='line'>      (package-refresh-contents))
+</span><span class='line'>    (package-install package)))</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(require-package 'evil)
+</span><span class='line'>(require 'evil)
+</span><span class='line'>(evil-mode 1)</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>1.2 modes and states</h2>
+
+<p>光标上用点颜色，看起来舒服点。红色是退回Emacs（使用<code>C-z</code>，再按一次<code>C-z</code>回到evil），</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(setq evil-emacs-state-cursor '("red" box))
+</span><span class='line'>(setq evil-normal-state-cursor '("green" box))
+</span><span class='line'>(setq evil-insert-state-cursor '("orange" bar))</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>这里有个terminology的区别：vim中的<em>mode</em>指的是Normal, Insert, Visual等，vim是模式编辑器。但是在Emacs中，<em>mode</em>是指对特定文本定义的一组快捷键。所以，evil把vim中的<em>mode</em>称作<em>state</em>。</p></blockquote>
+
+<h1>2 设置</h1>
+
+<p>通过一堆variable设置evil，可以通过 <code>M-x customize-group RET evil RET</code> 查看当前的设置。</p>
+
+<p><code>setq</code>设置全局变量，<code>setq-default</code>设置buffer-local的变量，而且要在evil加载前修改<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(setq evil-shift-width 8) 
+</span><span class='line'>;; Load Evil(require ’evil) . . .</span></code></pre></td></tr></table></div></figure>
+
+
+<p>下面列出的variable，基本上默认值和vim的行为类似，但是<em>evil-want-C-u-scroll</em>默认不是t。</p>
+
+<p><em>evil-auto-indent</em> [Variable]</p>
+
+<blockquote><p>t(default), nil，类似vim中的autoindent。</p></blockquote>
+
+<p><em>evil-shift-width</em> [Variable]</p>
+
+<blockquote><p>The number of columns a line is shifted by the commands > and &lt;.</p></blockquote>
+
+<p><em>evil-repeat-move-cursor</em> [Variable]</p>
+
+<blockquote><p>如果t(default)，使用<code>.</code>重复时光标改变位置。</p></blockquote>
+
+<p><em>evil-find-skip-newlines</em> [Variable]</p>
+
+<blockquote><p>如果t，那么<em>f</em>，<em>F</em>，<em>t</em>，<em>T</em>会查找到其他行。nil(default)。</p></blockquote>
+
+<p><em>evil-move-cursor-back</em> [Variable]</p>
+
+<blockquote><p>t(default)，和vim的行为类似，退出insert state时，光标前移一格。</p></blockquote>
+
+<p><em>evil-want-fine-undo</em> [Variable]</p>
+
+<blockquote><p>If t, then a change-based action like cw may be undone in several steps. If nil (the default), then it is undone in one step.</p></blockquote>
+
+<p><em>evil-regexp-search</em> [Variable]</p>
+
+<blockquote><p>t(default)，<code>/</code>，<code>?</code>使用正则表达式</p></blockquote>
+
+<p><em>evil-search-wrap</em> [Variable]</p>
+
+<blockquote><p>t(default)，<code>/</code>，<code>?</code>搜索是到底后从头再搜索。</p></blockquote>
+
+<p><em>evil-flash-delay</em> [Variable]</p>
+
+<blockquote><p>The number of seconds to flash search matches when pressing n and N.</p></blockquote>
+
+<p><em>evil-want-C-i-jump</em> [Variable]</p>
+
+<blockquote><p>If t (the default), then C-i jumps forwards in the jump list. If nil, then C-i inserts a tab.</p></blockquote>
+
+<p><em>evil-want-C-u-scroll</em> [Variable]</p>
+
+<blockquote><p>If t, then C-u scrolls the buffer. If nil (the default), then C-u begins a numeric prefix argument.</p></blockquote>
+
+<h2>2.1 The cursor</h2>
+
+<p>这个之前也已经涉及过，现在全面了解下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(setq evil-emacs-state-cursor '("red" box))
+</span><span class='line'>(setq evil-normal-state-cursor '("green" box))
+</span><span class='line'>(setq evil-insert-state-cursor '("orange" bar))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>一共这么多：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>evil-default-cursor  The default cursor.evil-normal-state-cursor The cursor for Normal state.evil-insert-state-cursor    The cursor for Insert state.evil-visual-state-cursor    The cursor for Visual state.evil-replace-state-cursor   The cursor for Replace state.evil-operator-state-cursor The cursor for Operator-Pending state.evil-motion-state-cursor  The cursor for Motion state.evil-emacs-state-cursor The cursor for Emacs state.</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>2.2 The initial state默认是进入 Normal State。我也就不修改了。</h2>
+
+<h1>3 Keymaps</h1>
+
+<p>Evil 的键映射存储在多个keymaps中，每个 state 有一个全局的 keymap，比如对应于Normal State 的<code>evil-normal-state-map</code>。
+通过 Emacs 的 <code>define-key</code> 来修改。
+<code>;; bind key "w" to command foo
+(define-key evil-normal-state-map "w" ’foo)</code>
+<code>evil-maps.el</code> 包含所有的键绑定。
+<code>
+evil-normal-state-map   The global keymap for Normal state.evil-insert-state-map    The global keymap for Insert state.evil-visual-state-map    The global keymap for Visual state.evil-replace-state-map   The global keymap for Replace state.evil-operator-state-map The global keymap for Operator-Pending state.evil-motion-state-map  The global keymap for Motion state.</code>每个 state 还有一个 buffer-local 的 keymap。也就是特定于该 buffer，优先于 global keymap。这些可以通过 mode hook 修改。
+<code>
+evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-state-local-map    Buffer-local keymap for Insert state.evil-visual-state-local-map    Buffer-local keymap for Visual state.evil-replace-state-local-map   Buffer-local keymap for Replace state.evil-operator-state-local-map Buffer-local keymap for Operator-Pending state.evil-motion-state-local-map  Buffer-local keymap for Motion state.</code></p>
+
+<h2>3.1 ‘evil-define-key’</h2>
+
+<p>Evil 提供的方法，可以往 Emacs 的 keymap 中添加特定 state 的键绑定。比如:</p>
+
+<p>定义了一个 minor mode，叫做 foo-mode。然后往该 mode 的 normal state 下修改键绑定。<code>
+(define-minor-mode foo-mode       "Foo mode."       :keymap (make-sparse-keymap))     (evil-define-key ’normal foo-mode-map "w" ’bar)     (evil-define-key ’normal foo-mode-map "e" ’baz)</code>然后用 hook，添加到 text-mode-hook 里。
+<code>
+(add-hook ’text-mode-hook ’foo-mode) ; enable alongside text-mode</code></p>
+
+<p><strong>To Be Continued</strong></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Strictly speaking, the order only matters if the variable affects the way Evil is loaded. This is the case with some of the ‘evil-want-’ variables.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-29T23:33:00+00:00" pubdate data-updated="true">Nov 29<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/emacs/'>Emacs</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://poems.github.io/blog/2013/11/29/emacs-survial-with-evil-and-family/" data-via="" data-counturl="http://poems.github.io/blog/2013/11/29/emacs-survial-with-evil-and-family/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/29/linux-useful-tricks/" title="Previous Post: Linux Useful Tricks">&laquo; Linux Useful Tricks</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/29/emacs-survial-with-evil-and-family/">Emacs Survial With Evil &amp; Family</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/29/linux-useful-tricks/">Linux Useful Tricks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/27/jruby-small-memos/">JRuby Small Memos</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/24/ease-life-with-yasnippet/">Ease Life With YASnippet</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/23/macro-and-defmacro-in-emacs/">Macro &amp; Defmacro in Emacs</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
