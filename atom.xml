@@ -4,23 +4,19 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://poems.github.io/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-04T11:37:04+00:00</updated>
+  <updated>2013-12-04T11:41:34+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
     
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    
     <title type="html"><![CDATA[Emacs Help Command]]></title>
     <link href="http://poems.github.io/blog/2013/11/30/emacs-help-command/"/>
-    
     <updated>2013-11-30T03:30:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/30/emacs-help-command</id>
-    
     <content type="html"><![CDATA[<p>You have typed C-h, the help character.  Type a Help option:
 (Use SPC or DEL to scroll through this text.  Type q to exit the Help command.)</p>
 
@@ -90,17 +86,13 @@ C-w         Information on absence of warranty for GNU Emacs.</p>
 
 <p>&#8220;`</p>
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[Emacs Survial with Evil &amp; Family]]></title>
     <link href="http://poems.github.io/blog/2013/11/29/emacs-survial-with-evil-and-family/"/>
-    
     <updated>2013-11-29T23:33:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/29/emacs-survial-with-evil-and-family</id>
-    
     <content type="html"><![CDATA[<h1>1 概览</h1>
 
 <h2>1.1 安装 evil</h2>
@@ -266,17 +258,13 @@ evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-sta
 </div>
 
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[Linux Useful Tricks]]></title>
     <link href="http://poems.github.io/blog/2013/11/29/linux-useful-tricks/"/>
-    
     <updated>2013-11-29T08:18:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/29/linux-useful-tricks</id>
-    
     <content type="html"><![CDATA[<h2>课后任务</h2>
 
 <p>使用vagrant搭建Linux虚拟机</p>
@@ -505,17 +493,13 @@ evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-sta
 
 <p><a href="http://www.commandlinefu.com/commands/tagged/800/commandfu">http://www.commandlinefu.com/commands/tagged/800/commandfu</a></p>
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[JRuby Small Memos]]></title>
     <link href="http://poems.github.io/blog/2013/11/27/jruby-small-memos/"/>
-    
     <updated>2013-11-27T23:22:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/27/jruby-small-memos</id>
-    
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ jruby --version</span></code></pre></td></tr></table></div></figure>
 
@@ -544,17 +528,13 @@ evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-sta
 </span><span class='line'>irb(main):003:0&gt;</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[Ease Life with YASnippet]]></title>
     <link href="http://poems.github.io/blog/2013/11/24/ease-life-with-yasnippet/"/>
-    
     <updated>2013-11-24T01:44:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/24/ease-life-with-yasnippet</id>
-    
     <content type="html"><![CDATA[<p>安装使用<code>package-install</code>，实际上可以写一个简易方法避免重复劳动：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -658,17 +638,13 @@ evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-sta
 
 <p>以上是3中最常见的方法（虽然我不知道什么是 hippie-expand）。</p>
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[macro &amp; defmacro in Emacs]]></title>
     <link href="http://poems.github.io/blog/2013/11/23/macro-and-defmacro-in-emacs/"/>
-    
     <updated>2013-11-23T16:42:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/23/macro-and-defmacro-in-emacs</id>
-    
     <content type="html"><![CDATA[<p>学习下Lisp的宏（macro）。</p>
 
 <p>首先，区别：Lisp宏和键盘宏（keyboard macro）是两个不同的概念。</p>
@@ -752,17 +728,13 @@ The return value is undefined.</p>
 
 <p>我们可以用 &lsquo; 引用一个对象并不执行.我们还可以用 反引用 ` 引用一个列表, 但是只是选择性的执行列表的元素.</p>
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[A Growing Emacser]]></title>
     <link href="http://poems.github.io/blog/2013/11/23/a-growing-emacser/"/>
-    
     <updated>2013-11-23T16:00:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/23/a-growing-emacser</id>
-    
     <content type="html"><![CDATA[<hr />
 
 <p><code>when:</code> when is a lisp macro</p>
@@ -836,17 +808,13 @@ particular subfeatures supported in this version of FEATURE.</p>
 
 <hr />
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[A example of writing Exception in java]]></title>
     <link href="http://poems.github.io/blog/2013/11/23/a-example-of-writing-exception-in-java/"/>
-    
     <updated>2013-11-23T07:49:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/23/a-example-of-writing-exception-in-java</id>
-    
     <content type="html"><![CDATA[<p>记录在阅读 Jasig Cas 的源码学习到的 Java 知识。</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1229,20 +1197,15 @@ particular subfeatures supported in this version of FEATURE.</p>
 
 
 ]]></content>
-    
   </entry>
   
   <entry>
-    
     <title type="html"><![CDATA[A Blank Page for Test]]></title>
     <link href="http://poems.github.io/blog/2013/11/02/a-blank-page-for-test/"/>
-    
     <updated>2013-11-02T11:23:00+00:00</updated>
     <id>http://poems.github.io/blog/2013/11/02/a-blank-page-for-test</id>
-    
     <content type="html"><![CDATA[<h1>A Blank Page for Test</h1>
 ]]></content>
-    
   </entry>
   
 </feed>
