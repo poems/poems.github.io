@@ -2,46 +2,50 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://poems.github.io/blog/2013/11/02/a-blank-page-for-test/</loc>
-        <lastmod>2013-11-02T11:26:49+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/blog/2013/11/23/a-example-of-writing-exception-in-java/</loc>
-        <lastmod>2013-11-23T08:23:51+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/blog/2013/11/23/a-growing-emacser/</loc>
-        <lastmod>2013-11-27T13:15:01+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/blog/2013/11/23/macro-and-defmacro-in-emacs/</loc>
-        <lastmod>2013-11-24T01:08:42+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/blog/2013/11/24/ease-life-with-yasnippet/</loc>
-        <lastmod>2013-11-24T03:40:44+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/blog/2013/11/27/jruby-small-memos/</loc>
-        <lastmod>2013-11-27T23:30:17+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/blog/2013/11/29/linux-useful-tricks/</loc>
-        <lastmod>2013-11-29T23:27:02+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/blog/2013/11/29/emacs-survial-with-evil-and-family/</loc>
-        <lastmod>2013-11-30T03:17:06+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://poems.github.io/blog/2013/11/30/emacs-help-command/</loc>
+        <lastmod>2013-12-04T11:33:49+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/blog/archives/</loc>
-        <lastmod>2013-11-30T03:17:06+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:50+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/</loc>
-        <lastmod>2013-11-30T03:17:06+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:50+00:00</lastmod>
     </url>
     <url>
         <loc>http://poems.github.io/robots.txt</loc>
-        <lastmod>2013-11-02T11:13:38+00:00</lastmod>
+        <lastmod>2013-12-04T11:33:50+00:00</lastmod>
     </url>
 </urlset>
