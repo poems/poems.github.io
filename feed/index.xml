@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[POEMS]]></title>
   <link href="http://poems.github.io/feed" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-04T11:41:34+00:00</updated>
+  <updated>2013-12-04T11:58:17+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Pieux Xi]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -25,67 +25,90 @@
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>```
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>a PATTERN   Show commands whose name matches the PATTERN (a list of words
+</span><span class='line'>              or a regexp).  See also the `apropos' command.              
+</span><span class='line'>b           Display all key bindings.
+</span><span class='line'>c KEYS      Display the command name run by the given key sequence.
+</span><span class='line'>C CODING    Describe the given coding system, or RET for current ones.
+</span><span class='line'>d PATTERN   Show a list of functions, variables, and other items whose
+</span><span class='line'>              documentation matches the PATTERN (a list of words or a regexp).
+</span><span class='line'>e           Go to the *Messages* buffer which logs echo-area messages.
+</span><span class='line'>f FUNCTION  Display documentation for the given function.
+</span><span class='line'>F COMMAND   Show the on-line manual's section that describes the command.
+</span><span class='line'>g           Display information about the GNU project.
+</span><span class='line'>h           Display the HELLO file which illustrates various scripts.
+</span><span class='line'>i           Start the Info documentation reader: read on-line manuals.
+</span><span class='line'>I METHOD    Describe a specific input method, or RET for current.
+</span><span class='line'>k KEYS      Display the full documentation for the key sequence.
+</span><span class='line'>K KEYS      Show the on-line manual's section for the command bound to KEYS.
+</span><span class='line'>l           Show last 300 input keystrokes (lossage).
+</span><span class='line'>L LANG-ENV  Describes a specific language environment, or RET for current.
+</span><span class='line'>m           Display documentation of current minor modes and current major mode,
+</span><span class='line'>              including their special commands.
+</span><span class='line'>n           Display news of recent Emacs changes.
+</span><span class='line'>p TOPIC     Find packages matching a given topic keyword.
+</span><span class='line'>r           Display the Emacs manual in Info mode.
+</span><span class='line'>s           Display contents of current syntax table, plus explanations.
+</span><span class='line'>S SYMBOL    Show the section for the given symbol in the on-line manual
+</span><span class='line'>              for the programming language used in this buffer.
+</span><span class='line'>t           Start the Emacs learn-by-doing tutorial.
+</span><span class='line'>v VARIABLE  Display the given variable's documentation and value.
+</span><span class='line'>w COMMAND   Display which keystrokes invoke the given command (where-is).
+</span><span class='line'>.           Display any available local help at point in the echo area.
+</span><span class='line'>
+</span><span class='line'>C-a         Information about Emacs.
+</span><span class='line'>C-c         Emacs copying permission (GNU General Public License).
+</span><span class='line'>C-d         Instructions for debugging GNU Emacs.
+</span><span class='line'>C-e         External packages and information about Emacs.
+</span><span class='line'>C-f         Emacs FAQ.
+</span><span class='line'>C-m         How to order printed Emacs manuals.
+</span><span class='line'>C-n         News of recent Emacs changes.
+</span><span class='line'>C-o         Emacs ordering and distribution information.
+</span><span class='line'>C-p         Info about known Emacs problems.
+</span><span class='line'>C-t         Emacs TODO list.
+</span><span class='line'>C-w         Information on absence of warranty for GNU Emacs.
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p>a PATTERN   Show commands whose name matches the PATTERN (a list of words</p>
-
-<pre><code>          or a regexp).  See also the `apropos' command.              
-</code></pre>
-
-<p>b           Display all key bindings.
-c KEYS      Display the command name run by the given key sequence.
-C CODING    Describe the given coding system, or RET for current ones.
-d PATTERN   Show a list of functions, variables, and other items whose</p>
-
-<pre><code>          documentation matches the PATTERN (a list of words or a regexp).
-</code></pre>
-
-<p>e           Go to the <em>Messages</em> buffer which logs echo-area messages.
-f FUNCTION  Display documentation for the given function.
-F COMMAND   Show the on-line manual&rsquo;s section that describes the command.
-g           Display information about the GNU project.
-h           Display the HELLO file which illustrates various scripts.
-i           Start the Info documentation reader: read on-line manuals.
-I METHOD    Describe a specific input method, or RET for current.
-k KEYS      Display the full documentation for the key sequence.
-K KEYS      Show the on-line manual&rsquo;s section for the command bound to KEYS.
-l           Show last 300 input keystrokes (lossage).
-L LANG-ENV  Describes a specific language environment, or RET for current.
-m           Display documentation of current minor modes and current major mode,</p>
-
-<pre><code>          including their special commands.
-</code></pre>
-
-<p>n           Display news of recent Emacs changes.
-p TOPIC     Find packages matching a given topic keyword.
-r           Display the Emacs manual in Info mode.
-s           Display contents of current syntax table, plus explanations.
-S SYMBOL    Show the section for the given symbol in the on-line manual</p>
-
-<pre><code>          for the programming language used in this buffer.
-</code></pre>
-
-<p>t           Start the Emacs learn-by-doing tutorial.
-v VARIABLE  Display the given variable&rsquo;s documentation and value.
-w COMMAND   Display which keystrokes invoke the given command (where-is).
-.           Display any available local help at point in the echo area.</p>
-
-<p>C-a         Information about Emacs.
-C-c         Emacs copying permission (GNU General Public License).
-C-d         Instructions for debugging GNU Emacs.
-C-e         External packages and information about Emacs.
-C-f         Emacs FAQ.
-C-m         How to order printed Emacs manuals.
-C-n         News of recent Emacs changes.
-C-o         Emacs ordering and distribution information.
-C-p         Info about known Emacs problems.
-C-t         Emacs TODO list.
-C-w         Information on absence of warranty for GNU Emacs.</p>
-
-<p>&#8220;`</p>
 ]]></content>
   </entry>
   
@@ -146,8 +169,10 @@ C-w         Information on absence of warranty for GNU Emacs.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
+<span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>(setq evil-shift-width 8) 
-</span><span class='line'>;; Load Evil(require ’evil) . . .</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>;; Load Evil
+</span><span class='line'>(require ’evil) . . .</span></code></pre></td></tr></table></div></figure>
 
 
 <p>下面列出的variable，基本上默认值和vim的行为类似，但是<em>evil-want-C-u-scroll</em>默认不是t。</p>
@@ -211,31 +236,133 @@ C-w         Information on absence of warranty for GNU Emacs.</p>
 <p>一共这么多：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>evil-default-cursor  The default cursor.evil-normal-state-cursor The cursor for Normal state.evil-insert-state-cursor    The cursor for Insert state.evil-visual-state-cursor    The cursor for Visual state.evil-replace-state-cursor   The cursor for Replace state.evil-operator-state-cursor The cursor for Operator-Pending state.evil-motion-state-cursor  The cursor for Motion state.evil-emacs-state-cursor The cursor for Emacs state.</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>evil-default-cursor
+</span><span class='line'>  The default cursor.
+</span><span class='line'>evil-normal-state-cursor
+</span><span class='line'>  The cursor for Normal state.
+</span><span class='line'>evil-insert-state-cursor
+</span><span class='line'>  The cursor for Insert state.
+</span><span class='line'>evil-visual-state-cursor
+</span><span class='line'>  The cursor for Visual state.
+</span><span class='line'>evil-replace-state-cursor
+</span><span class='line'>  The cursor for Replace state.
+</span><span class='line'>evil-operator-state-cursor
+</span><span class='line'>  The cursor for Operator-Pending state.
+</span><span class='line'>evil-motion-state-cursor
+</span><span class='line'>  The cursor for Motion state.
+</span><span class='line'>evil-emacs-state-cursor
+</span><span class='line'>  The cursor for Emacs state.</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>2.2 The initial state默认是进入 Normal State。我也就不修改了。</h2>
+<h2>2.2 The initial state</h2>
+
+<p>默认是进入 Normal State。我也就不修改了。</p>
 
 <h1>3 Keymaps</h1>
 
 <p>Evil 的键映射存储在多个keymaps中，每个 state 有一个全局的 keymap，比如对应于Normal State 的<code>evil-normal-state-map</code>。
-通过 Emacs 的 <code>define-key</code> 来修改。
-<code>;; bind key "w" to command foo
-(define-key evil-normal-state-map "w" ’foo)</code>
-<code>evil-maps.el</code> 包含所有的键绑定。
-<code>
-evil-normal-state-map   The global keymap for Normal state.evil-insert-state-map    The global keymap for Insert state.evil-visual-state-map    The global keymap for Visual state.evil-replace-state-map   The global keymap for Replace state.evil-operator-state-map The global keymap for Operator-Pending state.evil-motion-state-map  The global keymap for Motion state.</code>每个 state 还有一个 buffer-local 的 keymap。也就是特定于该 buffer，优先于 global keymap。这些可以通过 mode hook 修改。
-<code>
-evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-state-local-map    Buffer-local keymap for Insert state.evil-visual-state-local-map    Buffer-local keymap for Visual state.evil-replace-state-local-map   Buffer-local keymap for Replace state.evil-operator-state-local-map Buffer-local keymap for Operator-Pending state.evil-motion-state-local-map  Buffer-local keymap for Motion state.</code></p>
+通过 Emacs 的 <code>define-key</code> 来修改。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>;; bind key "w" to command foo
+</span><span class='line'>(define-key evil-normal-state-map "w" ’foo)</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>evil-maps.el</code> 包含所有的键绑定。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>evil-normal-state-map
+</span><span class='line'>  The global keymap for Normal state.
+</span><span class='line'>evil-insert-state-map
+</span><span class='line'>  The global keymap for Insert state.
+</span><span class='line'>evil-visual-state-map
+</span><span class='line'>  The global keymap for Visual state.
+</span><span class='line'>evil-replace-state-map
+</span><span class='line'>  The global keymap for Replace state.
+</span><span class='line'>evil-operator-state-map
+</span><span class='line'>  The global keymap for Operator-Pending state.
+</span><span class='line'>evil-motion-state-map
+</span><span class='line'>  The global keymap for Motion state.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>每个 state 还有一个 buffer-local 的 keymap。也就是特定于该 buffer，优先于 global keymap。这些可以通过 mode hook 修改。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>evil-normal-state-local-map
+</span><span class='line'>  Buffer-local keymap for Normal state.
+</span><span class='line'>evil-insert-state-local-map
+</span><span class='line'>  Buffer-local keymap for Insert state.
+</span><span class='line'>evil-visual-state-local-map
+</span><span class='line'>  Buffer-local keymap for Visual state.
+</span><span class='line'>evil-replace-state-local-map
+</span><span class='line'>  Buffer-local keymap for Replace state.
+</span><span class='line'>evil-operator-state-local-map
+</span><span class='line'>  Buffer-local keymap for Operator-Pending state.
+</span><span class='line'>evil-motion-state-local-map
+</span><span class='line'>  Buffer-local keymap for Motion state.</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>3.1 ‘evil-define-key’</h2>
 
 <p>Evil 提供的方法，可以往 Emacs 的 keymap 中添加特定 state 的键绑定。比如:</p>
 
-<p>定义了一个 minor mode，叫做 foo-mode。然后往该 mode 的 normal state 下修改键绑定。<code>
-(define-minor-mode foo-mode       "Foo mode."       :keymap (make-sparse-keymap))     (evil-define-key ’normal foo-mode-map "w" ’bar)     (evil-define-key ’normal foo-mode-map "e" ’baz)</code>然后用 hook，添加到 text-mode-hook 里。
-<code>
-(add-hook ’text-mode-hook ’foo-mode) ; enable alongside text-mode</code></p>
+<p>定义了一个 minor mode，叫做 foo-mode。然后往该 mode 的 normal state 下修改键绑定。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(define-minor-mode foo-mode
+</span><span class='line'>       "Foo mode."
+</span><span class='line'>       :keymap (make-sparse-keymap))
+</span><span class='line'>     (evil-define-key ’normal foo-mode-map "w" ’bar)
+</span><span class='line'>     (evil-define-key ’normal foo-mode-map "e" ’baz)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后用 hook，添加到 text-mode-hook 里。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(add-hook ’text-mode-hook ’foo-mode) ; enable alongside text-mode</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Appendix 1</h2>
 
@@ -553,74 +680,38 @@ evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-sta
 </span></code></pre></td></tr></table></div></figure>
 
 
-<blockquote><p>学习下其中的1个function</p>
+<p>学习下其中的1个function</p>
 
 <p><code>assoc</code> is a built-in function in `C source code&#8217;.</p>
 
-<p>&#8220;`
-(assoc KEY LIST)</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(assoc KEY LIST)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Return non-nil if KEY is `equal&#8217; to the car of an element of LIST.
+The value is actually the first element of LIST whose car equals KEY.</p>
+
+<p>开始学习如何使用YASnippet。</p>
+
+<p><strong>1 组织你的 Snippets</strong> (<em>Organizing Snippets</em>)</p>
+
+<p>Snippet的定义是储存在文件系统的文件中。YASnippet的触发机制会找到这些snippet tables，然后展开。</p>
+
+<p>首先，新建一个目录：my-snippets，用来存放自定义的snippets。</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>&gt; Return non-nil if KEY is `equal' to the car of an element of LIST.
-</span><span class='line'>The value is actually the first element of LIST whose car equals KEY.
+</pre></td><td class='code'><pre><code class=''><span class='line'>(require 'yasnippet)
 </span><span class='line'>
-</span><span class='line'>开始学习如何使用YASnippet。
+</span><span class='line'>(setq yas-snippet-dirs (concat user-emacs-directory "my-snippets"))
 </span><span class='line'>
-</span><span class='line'>**1 组织你的 Snippets** (*Organizing Snippets*)
-</span><span class='line'>
-</span><span class='line'>Snippet的定义是储存在文件系统的文件中。YASnippet的触发机制会找到这些snippet tables，然后展开。
-</span><span class='line'>
-</span><span class='line'>首先，新建一个目录：my-snippets，用来存放自定义的snippets。
-</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>(add-hook 'prog-mode-hook 'yas-minor-mode)</span></code></pre></td></tr></table></div></figure>
 
 
-<p>(require &lsquo;yasnippet)</p>
-
-<p>(setq yas-snippet-dirs (concat user-emacs-directory &ldquo;my-snippets&rdquo;))</p>
-
-<p>(add-hook &lsquo;prog-mode-hook &#8216;yas-minor-mode)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>看下是怎么组织snippets的（这是YASnippet自带的）：
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>snippets tree -a . | head -n 20                                                                                                                      system
-.
-├── c++-mode
-│   ├── .yas-parents
-│   ├── beginend
-│   ├── class
-│   ├── ns
-│   ├── template
-│   └── using
-├── c-mode
-│   ├── .yas-parents
-│   ├── fopen
-│   └── printf
-├── cc-mode
-│   ├── .yas-parents
-│   ├── do
-│   ├── for
-│   ├── if
-│   ├── inc
-│   ├── inc.1
-│   ├── main</p>
-
-<p>&#8220;`</p>
+<p>看下是怎么组织snippets的（这是YASnippet自带的）：</p>
 
 <p><code>.yas.parent</code>文件可以共享其他目录下的snippets。</p>
 

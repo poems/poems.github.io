@@ -3,9 +3,9 @@
 <html lang="en-GB">
 <head>
 	<meta charset="utf-8">
-	<title>Ease Life with YASnippet  | My Octopress Blog</title>
+	<title>Ease Life with YASnippet  | POEMS</title>
 
-	<meta name="author" content="Your Name">
+	<meta name="author" content="Pieux Xi">
 
 <meta name="description" content="安装使用package-install，实际上可以写一个简易方法避免重复劳动： 1
 2
@@ -17,7 +17,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="POEMS" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -30,8 +30,8 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">My Octopress Blog</a></h1>
-<span class="tagline">A blogging framework for hackers.</span>
+	<header id="header" class="inner"><h1><a href="/">POEMS</a></h1>
+<span class="tagline">Young & Beauty</span>
 <!-- <nav id="main-nav"><ul>
 	<li><a href="/about">About</a></li>
 	<li><a href="/archives">Archives</a></li>
@@ -87,74 +87,38 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<blockquote><p>学习下其中的1个function</p>
+<p>学习下其中的1个function</p>
 
 <p><code>assoc</code> is a built-in function in `C source code&#8217;.</p>
 
-<p>&#8220;`
-(assoc KEY LIST)</p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(assoc KEY LIST)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Return non-nil if KEY is `equal&#8217; to the car of an element of LIST.
+The value is actually the first element of LIST whose car equals KEY.</p>
+
+<p>开始学习如何使用YASnippet。</p>
+
+<p><strong>1 组织你的 Snippets</strong> (<em>Organizing Snippets</em>)</p>
+
+<p>Snippet的定义是储存在文件系统的文件中。YASnippet的触发机制会找到这些snippet tables，然后展开。</p>
+
+<p>首先，新建一个目录：my-snippets，用来存放自定义的snippets。</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>&gt; Return non-nil if KEY is `equal' to the car of an element of LIST.
-</span><span class='line'>The value is actually the first element of LIST whose car equals KEY.
+</pre></td><td class='code'><pre><code class=''><span class='line'>(require 'yasnippet)
 </span><span class='line'>
-</span><span class='line'>开始学习如何使用YASnippet。
+</span><span class='line'>(setq yas-snippet-dirs (concat user-emacs-directory "my-snippets"))
 </span><span class='line'>
-</span><span class='line'>**1 组织你的 Snippets** (*Organizing Snippets*)
-</span><span class='line'>
-</span><span class='line'>Snippet的定义是储存在文件系统的文件中。YASnippet的触发机制会找到这些snippet tables，然后展开。
-</span><span class='line'>
-</span><span class='line'>首先，新建一个目录：my-snippets，用来存放自定义的snippets。
-</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>(add-hook 'prog-mode-hook 'yas-minor-mode)</span></code></pre></td></tr></table></div></figure>
 
 
-<p>(require &lsquo;yasnippet)</p>
-
-<p>(setq yas-snippet-dirs (concat user-emacs-directory &ldquo;my-snippets&rdquo;))</p>
-
-<p>(add-hook &lsquo;prog-mode-hook &#8216;yas-minor-mode)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>看下是怎么组织snippets的（这是YASnippet自带的）：
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>snippets tree -a . | head -n 20                                                                                                                      system
-.
-├── c++-mode
-│   ├── .yas-parents
-│   ├── beginend
-│   ├── class
-│   ├── ns
-│   ├── template
-│   └── using
-├── c-mode
-│   ├── .yas-parents
-│   ├── fopen
-│   └── printf
-├── cc-mode
-│   ├── .yas-parents
-│   ├── do
-│   ├── for
-│   ├── if
-│   ├── inc
-│   ├── inc.1
-│   ├── main</p>
-
-<p>&#8220;`</p>
+<p>看下是怎么组织snippets的（这是YASnippet自带的）：</p>
 
 <p><code>.yas.parent</code>文件可以共享其他目录下的snippets。</p>
 
@@ -209,7 +173,7 @@
 <br>
 &copy; 2013
 
-    Your Name
+    Pieux Xi
 
 </footer>
 	<script src="/javascripts/slash.js"></script>

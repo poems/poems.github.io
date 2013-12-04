@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Emacs | My Octopress Blog]]></title>
+  <title><![CDATA[Category: Emacs | POEMS]]></title>
   <link href="http://poems.github.io/blog/categories/emacs/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-04T11:41:34+00:00</updated>
+  <updated>2013-12-04T11:58:17+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Pieux Xi]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -23,13 +23,8 @@
 
 <p>常用的是：</p>
 
-<p>```</p>
-
-<p>```</p>
-
-<p>```</p>
-
-<p>a PATTERN   Show commands whose name matches the PATTERN (a list of words</p>
+<p>```
+a PATTERN   Show commands whose name matches the PATTERN (a list of words</p>
 
 <pre><code>          or a regexp).  See also the `apropos' command.              
 </code></pre>
@@ -137,7 +132,8 @@ C-w         Information on absence of warranty for GNU Emacs.</p>
 
 <p><code>
 (setq evil-shift-width 8)
-;; Load Evil(require ’evil) . . .
+;; Load Evil
+(require ’evil) . . .
 </code></p>
 
 <p>下面列出的variable，基本上默认值和vim的行为类似，但是<em>evil-want-C-u-scroll</em>默认不是t。</p>
@@ -198,32 +194,155 @@ C-w         Information on absence of warranty for GNU Emacs.</p>
 
 <p>一共这么多：</p>
 
-<p><code>
-evil-default-cursor The default cursor.evil-normal-state-cursor The cursor for Normal state.evil-insert-state-cursor    The cursor for Insert state.evil-visual-state-cursor    The cursor for Visual state.evil-replace-state-cursor   The cursor for Replace state.evil-operator-state-cursor The cursor for Operator-Pending state.evil-motion-state-cursor  The cursor for Motion state.evil-emacs-state-cursor The cursor for Emacs state.
-</code></p>
+<p>```
+evil-default-cursor</p>
 
-<h2>2.2 The initial state默认是进入 Normal State。我也就不修改了。</h2>
+<pre><code>The default cursor.
+</code></pre>
+
+<p>evil-normal-state-cursor</p>
+
+<pre><code>The cursor for Normal state.
+</code></pre>
+
+<p>evil-insert-state-cursor</p>
+
+<pre><code>The cursor for Insert state.
+</code></pre>
+
+<p>evil-visual-state-cursor</p>
+
+<pre><code>The cursor for Visual state.
+</code></pre>
+
+<p>evil-replace-state-cursor</p>
+
+<pre><code>The cursor for Replace state.
+</code></pre>
+
+<p>evil-operator-state-cursor</p>
+
+<pre><code>The cursor for Operator-Pending state.
+</code></pre>
+
+<p>evil-motion-state-cursor</p>
+
+<pre><code>The cursor for Motion state.
+</code></pre>
+
+<p>evil-emacs-state-cursor</p>
+
+<pre><code>The cursor for Emacs state.
+</code></pre>
+
+<p>```</p>
+
+<h2>2.2 The initial state</h2>
+
+<p>默认是进入 Normal State。我也就不修改了。</p>
 
 <h1>3 Keymaps</h1>
 
 <p>Evil 的键映射存储在多个keymaps中，每个 state 有一个全局的 keymap，比如对应于Normal State 的<code>evil-normal-state-map</code>。
-通过 Emacs 的 <code>define-key</code> 来修改。
-<code>;; bind key "w" to command foo
-(define-key evil-normal-state-map "w" ’foo)</code>
-<code>evil-maps.el</code> 包含所有的键绑定。
-<code>
-evil-normal-state-map   The global keymap for Normal state.evil-insert-state-map    The global keymap for Insert state.evil-visual-state-map    The global keymap for Visual state.evil-replace-state-map   The global keymap for Replace state.evil-operator-state-map The global keymap for Operator-Pending state.evil-motion-state-map  The global keymap for Motion state.</code>每个 state 还有一个 buffer-local 的 keymap。也就是特定于该 buffer，优先于 global keymap。这些可以通过 mode hook 修改。
-<code>
-evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-state-local-map    Buffer-local keymap for Insert state.evil-visual-state-local-map    Buffer-local keymap for Visual state.evil-replace-state-local-map   Buffer-local keymap for Replace state.evil-operator-state-local-map Buffer-local keymap for Operator-Pending state.evil-motion-state-local-map  Buffer-local keymap for Motion state.</code></p>
+通过 Emacs 的 <code>define-key</code> 来修改。</p>
+
+<p><code>
+;; bind key "w" to command foo
+(define-key evil-normal-state-map "w" ’foo)
+</code></p>
+
+<p><code>evil-maps.el</code> 包含所有的键绑定。</p>
+
+<p>```
+evil-normal-state-map</p>
+
+<pre><code>The global keymap for Normal state.
+</code></pre>
+
+<p>evil-insert-state-map</p>
+
+<pre><code>The global keymap for Insert state.
+</code></pre>
+
+<p>evil-visual-state-map</p>
+
+<pre><code>The global keymap for Visual state.
+</code></pre>
+
+<p>evil-replace-state-map</p>
+
+<pre><code>The global keymap for Replace state.
+</code></pre>
+
+<p>evil-operator-state-map</p>
+
+<pre><code>The global keymap for Operator-Pending state.
+</code></pre>
+
+<p>evil-motion-state-map</p>
+
+<pre><code>The global keymap for Motion state.
+</code></pre>
+
+<p>```</p>
+
+<p>每个 state 还有一个 buffer-local 的 keymap。也就是特定于该 buffer，优先于 global keymap。这些可以通过 mode hook 修改。</p>
+
+<p>```
+evil-normal-state-local-map</p>
+
+<pre><code>Buffer-local keymap for Normal state.
+</code></pre>
+
+<p>evil-insert-state-local-map</p>
+
+<pre><code>Buffer-local keymap for Insert state.
+</code></pre>
+
+<p>evil-visual-state-local-map</p>
+
+<pre><code>Buffer-local keymap for Visual state.
+</code></pre>
+
+<p>evil-replace-state-local-map</p>
+
+<pre><code>Buffer-local keymap for Replace state.
+</code></pre>
+
+<p>evil-operator-state-local-map</p>
+
+<pre><code>Buffer-local keymap for Operator-Pending state.
+</code></pre>
+
+<p>evil-motion-state-local-map</p>
+
+<pre><code>Buffer-local keymap for Motion state.
+</code></pre>
+
+<p>```</p>
 
 <h2>3.1 ‘evil-define-key’</h2>
 
 <p>Evil 提供的方法，可以往 Emacs 的 keymap 中添加特定 state 的键绑定。比如:</p>
 
-<p>定义了一个 minor mode，叫做 foo-mode。然后往该 mode 的 normal state 下修改键绑定。<code>
-(define-minor-mode foo-mode       "Foo mode."       :keymap (make-sparse-keymap))     (evil-define-key ’normal foo-mode-map "w" ’bar)     (evil-define-key ’normal foo-mode-map "e" ’baz)</code>然后用 hook，添加到 text-mode-hook 里。
-<code>
-(add-hook ’text-mode-hook ’foo-mode) ; enable alongside text-mode</code></p>
+<p>定义了一个 minor mode，叫做 foo-mode。然后往该 mode 的 normal state 下修改键绑定。</p>
+
+<p>```
+(define-minor-mode foo-mode</p>
+
+<pre><code>   "Foo mode."
+   :keymap (make-sparse-keymap))
+ (evil-define-key ’normal foo-mode-map "w" ’bar)
+ (evil-define-key ’normal foo-mode-map "e" ’baz)
+</code></pre>
+
+<p>```</p>
+
+<p>然后用 hook，添加到 text-mode-hook 里。</p>
+
+<p><code>
+(add-hook ’text-mode-hook ’foo-mode) ; enable alongside text-mode
+</code></p>
 
 <h2>Appendix 1</h2>
 
@@ -268,7 +387,7 @@ evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-sta
 
 <p>```</p>
 
-<blockquote><p>学习下其中的1个function</p>
+<p>学习下其中的1个function</p>
 
 <p><code>assoc</code> is a built-in function in `C source code'.</p>
 
@@ -277,7 +396,7 @@ evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-sta
 </code></p>
 
 <p>Return non-nil if KEY is `equal' to the car of an element of LIST.
-The value is actually the first element of LIST whose car equals KEY.</p></blockquote>
+The value is actually the first element of LIST whose car equals KEY.</p>
 
 <p>开始学习如何使用YASnippet。</p>
 
@@ -296,31 +415,6 @@ The value is actually the first element of LIST whose car equals KEY.</p></block
 ```</p>
 
 <p>看下是怎么组织snippets的（这是YASnippet自带的）：</p>
-
-<p>```
-snippets tree -a . | head -n 20                                                                                                                      system
-.
-├── c++-mode
-│   ├── .yas-parents
-│   ├── beginend
-│   ├── class
-│   ├── ns
-│   ├── template
-│   └── using
-├── c-mode
-│   ├── .yas-parents
-│   ├── fopen
-│   └── printf
-├── cc-mode
-│   ├── .yas-parents
-│   ├── do
-│   ├── for
-│   ├── if
-│   ├── inc
-│   ├── inc.1
-│   ├── main</p>
-
-<p>```</p>
 
 <p><code>.yas.parent</code>文件可以共享其他目录下的snippets。</p>
 

@@ -3,9 +3,9 @@
 <html lang="en-GB">
 <head>
 	<meta charset="utf-8">
-	<title>Emacs Survial with Evil &amp; Family  | My Octopress Blog</title>
+	<title>Emacs Survial with Evil &amp; Family  | POEMS</title>
 
-	<meta name="author" content="Your Name">
+	<meta name="author" content="Pieux Xi">
 
 <meta name="description" content="1 概览 1.1 安装 evil 从网上找到的一个简易的方法，easy to be understood: 1
 2
@@ -17,7 +17,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="POEMS" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -30,8 +30,8 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">My Octopress Blog</a></h1>
-<span class="tagline">A blogging framework for hackers.</span>
+	<header id="header" class="inner"><h1><a href="/">POEMS</a></h1>
+<span class="tagline">Young & Beauty</span>
 <!-- <nav id="main-nav"><ul>
 	<li><a href="/about">About</a></li>
 	<li><a href="/archives">Archives</a></li>
@@ -122,8 +122,10 @@
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
+<span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>(setq evil-shift-width 8) 
-</span><span class='line'>;; Load Evil(require ’evil) . . .</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>;; Load Evil
+</span><span class='line'>(require ’evil) . . .</span></code></pre></td></tr></table></div></figure>
 
 
 <p>下面列出的variable，基本上默认值和vim的行为类似，但是<em>evil-want-C-u-scroll</em>默认不是t。</p>
@@ -187,31 +189,133 @@
 <p>一共这么多：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>evil-default-cursor  The default cursor.evil-normal-state-cursor The cursor for Normal state.evil-insert-state-cursor    The cursor for Insert state.evil-visual-state-cursor    The cursor for Visual state.evil-replace-state-cursor   The cursor for Replace state.evil-operator-state-cursor The cursor for Operator-Pending state.evil-motion-state-cursor  The cursor for Motion state.evil-emacs-state-cursor The cursor for Emacs state.</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>evil-default-cursor
+</span><span class='line'>  The default cursor.
+</span><span class='line'>evil-normal-state-cursor
+</span><span class='line'>  The cursor for Normal state.
+</span><span class='line'>evil-insert-state-cursor
+</span><span class='line'>  The cursor for Insert state.
+</span><span class='line'>evil-visual-state-cursor
+</span><span class='line'>  The cursor for Visual state.
+</span><span class='line'>evil-replace-state-cursor
+</span><span class='line'>  The cursor for Replace state.
+</span><span class='line'>evil-operator-state-cursor
+</span><span class='line'>  The cursor for Operator-Pending state.
+</span><span class='line'>evil-motion-state-cursor
+</span><span class='line'>  The cursor for Motion state.
+</span><span class='line'>evil-emacs-state-cursor
+</span><span class='line'>  The cursor for Emacs state.</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>2.2 The initial state默认是进入 Normal State。我也就不修改了。</h2>
+<h2>2.2 The initial state</h2>
+
+<p>默认是进入 Normal State。我也就不修改了。</p>
 
 <h1>3 Keymaps</h1>
 
 <p>Evil 的键映射存储在多个keymaps中，每个 state 有一个全局的 keymap，比如对应于Normal State 的<code>evil-normal-state-map</code>。
-通过 Emacs 的 <code>define-key</code> 来修改。
-<code>;; bind key "w" to command foo
-(define-key evil-normal-state-map "w" ’foo)</code>
-<code>evil-maps.el</code> 包含所有的键绑定。
-<code>
-evil-normal-state-map   The global keymap for Normal state.evil-insert-state-map    The global keymap for Insert state.evil-visual-state-map    The global keymap for Visual state.evil-replace-state-map   The global keymap for Replace state.evil-operator-state-map The global keymap for Operator-Pending state.evil-motion-state-map  The global keymap for Motion state.</code>每个 state 还有一个 buffer-local 的 keymap。也就是特定于该 buffer，优先于 global keymap。这些可以通过 mode hook 修改。
-<code>
-evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-state-local-map    Buffer-local keymap for Insert state.evil-visual-state-local-map    Buffer-local keymap for Visual state.evil-replace-state-local-map   Buffer-local keymap for Replace state.evil-operator-state-local-map Buffer-local keymap for Operator-Pending state.evil-motion-state-local-map  Buffer-local keymap for Motion state.</code></p>
+通过 Emacs 的 <code>define-key</code> 来修改。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>;; bind key "w" to command foo
+</span><span class='line'>(define-key evil-normal-state-map "w" ’foo)</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>evil-maps.el</code> 包含所有的键绑定。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>evil-normal-state-map
+</span><span class='line'>  The global keymap for Normal state.
+</span><span class='line'>evil-insert-state-map
+</span><span class='line'>  The global keymap for Insert state.
+</span><span class='line'>evil-visual-state-map
+</span><span class='line'>  The global keymap for Visual state.
+</span><span class='line'>evil-replace-state-map
+</span><span class='line'>  The global keymap for Replace state.
+</span><span class='line'>evil-operator-state-map
+</span><span class='line'>  The global keymap for Operator-Pending state.
+</span><span class='line'>evil-motion-state-map
+</span><span class='line'>  The global keymap for Motion state.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>每个 state 还有一个 buffer-local 的 keymap。也就是特定于该 buffer，优先于 global keymap。这些可以通过 mode hook 修改。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>evil-normal-state-local-map
+</span><span class='line'>  Buffer-local keymap for Normal state.
+</span><span class='line'>evil-insert-state-local-map
+</span><span class='line'>  Buffer-local keymap for Insert state.
+</span><span class='line'>evil-visual-state-local-map
+</span><span class='line'>  Buffer-local keymap for Visual state.
+</span><span class='line'>evil-replace-state-local-map
+</span><span class='line'>  Buffer-local keymap for Replace state.
+</span><span class='line'>evil-operator-state-local-map
+</span><span class='line'>  Buffer-local keymap for Operator-Pending state.
+</span><span class='line'>evil-motion-state-local-map
+</span><span class='line'>  Buffer-local keymap for Motion state.</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>3.1 ‘evil-define-key’</h2>
 
 <p>Evil 提供的方法，可以往 Emacs 的 keymap 中添加特定 state 的键绑定。比如:</p>
 
-<p>定义了一个 minor mode，叫做 foo-mode。然后往该 mode 的 normal state 下修改键绑定。<code>
-(define-minor-mode foo-mode       "Foo mode."       :keymap (make-sparse-keymap))     (evil-define-key ’normal foo-mode-map "w" ’bar)     (evil-define-key ’normal foo-mode-map "e" ’baz)</code>然后用 hook，添加到 text-mode-hook 里。
-<code>
-(add-hook ’text-mode-hook ’foo-mode) ; enable alongside text-mode</code></p>
+<p>定义了一个 minor mode，叫做 foo-mode。然后往该 mode 的 normal state 下修改键绑定。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(define-minor-mode foo-mode
+</span><span class='line'>       "Foo mode."
+</span><span class='line'>       :keymap (make-sparse-keymap))
+</span><span class='line'>     (evil-define-key ’normal foo-mode-map "w" ’bar)
+</span><span class='line'>     (evil-define-key ’normal foo-mode-map "e" ’baz)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后用 hook，添加到 text-mode-hook 里。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(add-hook ’text-mode-hook ’foo-mode) ; enable alongside text-mode</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Appendix 1</h2>
 
@@ -271,7 +375,7 @@ evil-normal-state-local-map Buffer-local keymap for Normal state.evil-insert-sta
 <br>
 &copy; 2013
 
-    Your Name
+    Pieux Xi
 
 </footer>
 	<script src="/javascripts/slash.js"></script>
