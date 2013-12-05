@@ -4,13 +4,22 @@
   <title><![CDATA[POEMS]]></title>
   <link href="http://poems.github.io/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-05T02:47:45+00:00</updated>
+  <updated>2013-12-05T02:54:38+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Pieux Xi]]></name>
     
   </author>
 
+  
+  <entry>
+    <title type="html"><![CDATA[NOTE: Special Things about CAS]]></title>
+    <link href="http://poems.github.io/blog/2013/12/05/note-special-things-about-cas/"/>
+    <updated>2013-12-05T02:49:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/05/note-special-things-about-cas</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Deploy war to Tomcat]]></title>
@@ -681,7 +690,7 @@
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ jruby -e "puts 'This is a short program'" 
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ jruby -e "puts 'This is a short program'"
 </span><span class='line'>This is a short program</span></code></pre></td></tr></table></div></figure>
 
 
@@ -694,7 +703,7 @@
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ jirb
-</span><span class='line'>irb(main):001:0&gt; ['Hello', 'world'].join ' ' 
+</span><span class='line'>irb(main):001:0&gt; ['Hello', 'world'].join ' '
 </span><span class='line'>=&gt; "Hello world"
 </span><span class='line'>irb(main):002:0&gt; "ybuRJ morf".reverse
 </span><span class='line'>=&gt; ufrom JRuby"

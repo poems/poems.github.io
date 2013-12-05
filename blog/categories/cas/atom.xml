@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CAS | POEMS]]></title>
+  <link href="http://poems.github.io/blog/categories/cas/atom.xml" rel="self"/>
+  <link href="http://poems.github.io/"/>
+  <updated>2013-12-05T02:54:38+00:00</updated>
+  <id>http://poems.github.io/</id>
+  <author>
+    <name><![CDATA[Pieux Xi]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[NOTE: Special Things about CAS]]></title>
+    <link href="http://poems.github.io/blog/2013/12/05/note-special-things-about-cas/"/>
+    <updated>2013-12-05T02:49:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/05/note-special-things-about-cas</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
