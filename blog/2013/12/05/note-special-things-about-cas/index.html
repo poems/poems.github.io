@@ -7,8 +7,8 @@
 
 	<meta name="author" content="Pieux Xi">
 
-<meta name="description" content="
-"> <meta name="keywords" content="">
+<meta name="description" content="1 Create the Certificate 打开终端，进到 home 目录，运行命令： 1
+keytool -genkey -alias tomcat -keyalg RSA -validity 365 需要输入� &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -65,7 +65,113 @@
 
 <time datetime="2013-12-05T02:49:00+00:00" pubdate data-updated="true">Dec 5<span>th</span>, 2013</time></div>
 	</header>
-	<div class="entry-content">
+	<div class="entry-content"><h1>1</h1>
+
+<p><strong>Create the Certificate</strong></p>
+
+<p>打开终端，进到 home 目录，运行命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>keytool -genkey -alias tomcat -keyalg RSA -validity 365</span></code></pre></td></tr></table></div></figure>
+
+
+<p>需要输入：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Enter keystore password:
+</span><span class='line'>Re-enter new password:
+</span><span class='line'>What is your first and last name?
+</span><span class='line'>  [Unknown]:  $REPLACE_WITH_FULL_MACHINE_NAME
+</span><span class='line'>What is the name of your organizational unit?
+</span><span class='line'>  [Unknown]:  Test
+</span><span class='line'>What is the name of your organization?
+</span><span class='line'>  [Unknown]:  Test
+</span><span class='line'>What is the name of your City or Locality?
+</span><span class='line'>  [Unknown]:  Test
+</span><span class='line'>What is the name of your State or Province?
+</span><span class='line'>  [Unknown]:  Test
+</span><span class='line'>What is the two-letter country code for this unit?
+</span><span class='line'>  [Unknown]:  US
+</span><span class='line'>Is CN=$FULL_MACHINE_NAME, OU=Test, O=Test, L=Test, ST=Test, C=US correct?
+</span><span class='line'>  [no]:  yes</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如何给这些值？</p>
+
+<p>For the keystore password you should enter &ldquo;changeit&rdquo; without the quotation marks. When prompted for the first and last name, you should enter your machine name during development. The rest of the data does not matter. Then obviously answer &ldquo;yes&rdquo; to the question of whether it&rsquo;s correct.</p>
+
+<blockquote><p>注意： CAS 协议需要走 HTTPS，为了保证能够工作， &ldquo;first and last name&rdquo; 为 $FULL_MACHINE_NAME。Mac 上获取计算机全名的方法是：<code>scutil --get ComputerName</code> 或者 <code>scutil --get LocalHostName</code>。</p></blockquote>
+
+<p>下一步，打开 <code>$TOMCAT_HOME/conf/server.xml</code>，找到这一块，去掉注释即可：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!--
+</span><span class='line'>&lt;Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+</span><span class='line'>    maxThreads="150" scheme="https" secure="true"
+</span><span class='line'>    clientAuth="false" sslProtocol="TLS" /&gt;
+</span><span class='line'>--&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重启 Tomcat，访问</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>https://$FULL_MACHINE_NAME:8443/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Any application that wishes to securely connect to this Tomcat instance would need to import the certificate. You can export the certificate that&rsquo;s compatible with other JVM keystores by executing the following command:</p>
+
+<p>所有想访问该 Tomcat 实例的应用都需要导入证书。首先导出证书，需要输入 keystore 的密码，这里就是 changeit：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>keytool -export -alias tomcat -file server.crt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输出是：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Enter keystore password:
+</span><span class='line'>Certificate stored in file &lt;server.crt&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can then import the server.crt into other JVM keystore&rsquo;s by executing a command similar to this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>keytool -import -file server.crt -keystore $JAVA_HOME/jre/lib/security/cacerts -alias tomcat</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It&rsquo;s recommended that you add it to the JVM keystore of your local development machine to facilitate testing.</p>
+
+<h1>2</h1>
+
+<p><strong>Maven War Overlay</strong><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://wiki.jasig.org/display/CASUM/Best+Practice+-+Setting+Up+CAS+Locally+using+the+Maven+WAR+Overlay+Method">Best Practice &ndash; Setting Up CAS Locally using the Maven WAR Overlay Method</a><a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
 </div>
 
 </article>
