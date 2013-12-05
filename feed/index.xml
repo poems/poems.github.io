@@ -4,7 +4,7 @@
   <title><![CDATA[POEMS]]></title>
   <link href="http://poems.github.io/feed" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-04T11:58:17+00:00</updated>
+  <updated>2013-12-05T02:46:22+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Pieux Xi]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Deploy war to Tomcat]]></title>
+    <link href="http://poems.github.io/blog/2013/12/05/deploy-war-to-tomcat/"/>
+    <updated>2013-12-05T02:28:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/05/deploy-war-to-tomcat</id>
+    <content type="html"><![CDATA[<p>非常简单，<code>mvn package</code> 生成的 war 包，直接扔进 Tomcat 安装目录下的 webApps 目录。然后重启下 Tomcat。</p>
+
+<p>不需要任何额外的配置，默认是 localhost:8080/war_name/</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NOTE: Writing GNU Emacs Extensions]]></title>
+    <link href="http://poems.github.io/blog/2013/12/04/note-writing-gnu-emacs-extensions/"/>
+    <updated>2013-12-04T11:59:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/04/note-writing-gnu-emacs-extensions</id>
+    <content type="html"><![CDATA[<h1>1￼</h1>
+
+<p><strong>列表处理</strong></p>
+
+<h2>1.1</h2>
+
+<p><strong>Lisp 列表</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>'(rose
+</span><span class='line'>  violet
+</span><span class='line'>  daisy
+</span><span class='line'>  buttercup)</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>1.1.1</h3>
+
+<p><strong>Lisp 原子</strong></p>
+
+<p><code>()</code> 空列表</p>
+
+<p>空列表既是原子，也是列表</p>
+
+<p>原子和列表都叫做 <strong>符号表达式</strong>(symbolic expression)，简称 s-expression。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Emacs Help Command]]></title>

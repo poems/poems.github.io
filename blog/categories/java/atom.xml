@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | POEMS]]></title>
   <link href="http://poems.github.io/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-04T11:58:17+00:00</updated>
+  <updated>2013-12-05T02:46:22+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Pieux Xi]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Deploy war to Tomcat]]></title>
+    <link href="http://poems.github.io/blog/2013/12/05/deploy-war-to-tomcat/"/>
+    <updated>2013-12-05T02:28:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/05/deploy-war-to-tomcat</id>
+    <content type="html"><![CDATA[<p>非常简单，<code>mvn package</code> 生成的 war 包，直接扔进 Tomcat 安装目录下的 webApps 目录。然后重启下 Tomcat。</p>
+
+<p>不需要任何额外的配置，默认是 localhost:8080/war_name/</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A example of writing Exception in java]]></title>
