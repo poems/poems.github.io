@@ -7,8 +7,9 @@
 
 	<meta name="author" content="Pieux Xi">
 
-<meta name="description" content="记录在阅读 Jasig Cas 的源码学习到的 Java 知识。 1
-public abstract class AuthenticationException extends Exception { 首先，这是� &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="when: when is a lisp macro 1
+(when COND BODY...) If COND yields non-nil, do BODY, else return nil.
+When COND yields non-nil, eval BODY forms &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -49,6 +50,119 @@ public abstract class AuthenticationException extends Exception { 首先，这�
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/11/23/a-growing-emacser/">
+			
+				A Growing Emacser</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-23T16:00:00+00:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<hr />
+
+<p><code>when:</code> when is a lisp macro</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(when COND BODY...)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If COND yields non-nil, do BODY, else return nil.
+When COND yields non-nil, eval BODY forms sequentially and return
+value of last one, or nil if there are none.</p>
+
+<hr />
+
+<p><code>fboundp</code> is a built-in function in `C source code&#8217;.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(fboundp SYMBOL)</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<p><code>add-to-list</code> is a compiled Lisp function in `subr.el&#8217;.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(add-to-list LIST-VAR ELEMENT &optional APPEND COMPARE-FN)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Add ELEMENT to the value of <code>LIST-VAR</code> if it isn&rsquo;t there yet.
+The test for presence of <code>ELEMENT</code> is done with <code>equal</code>,
+or with <code>COMPARE-FN</code> if that&rsquo;s non-nil.
+If <code>ELEMENT</code> is added, it is added at the beginning of the list,
+unless the optional argument <code>APPEND</code> is non-nil, in which case
+ELEMENT is added at the end.</p>
+
+<p>The return value is the new value of LIST-VAR.</p>
+
+<hr />
+
+<p><code>provide</code> is a built-in function in `C source code&#8217;.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(provide FEATURE &optional SUBFEATURES)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Announce that FEATURE is a feature of the current Emacs.
+The optional argument SUBFEATURES should be a list of symbols listing
+particular subfeatures supported in this version of FEATURE.</p>
+
+<hr />
+
+<p><code>C-x h</code> runs the command mark-whole-buffer</p>
+
+<p><code>C-w</code> runs the command kill region</p>
+
+<hr />
+
+<p>use <code>C-x &lt;right&gt;</code>, <code>C-x &lt;left&gt;</code> to cycle around in the buffer ring.</p>
+
+<p><code>iswitchb-mode</code> replaces the default C-x b behaviour with a very intuitive buffer-switching-with-completion system.</p>
+
+<p>The related commands are <code>C-x b</code>, <code>C-s</code> and <code>C-r</code>.</p>
+
+<hr />
+
+<p>Dired Mode 非常别扭，很多无用的快捷键。</p>
+
+<p>emacs <code>dired</code> (Directory Editor)mode.</p>
+
+<p><code>C-x d</code>: enter dired mode(use <code>M-x RET dired RET</code> is quick too)</p>
+
+<p><code>C-x 4 d</code>: <code>dired-other-window</code></p>
+
+<p><code>C-x C-j</code>: (dired-jump to current file)</p>
+
+<p><code>q</code>: quit</p>
+
+<p><code>R</code> to rename the file (or &lsquo;dired-do-rename&rsquo;).</p>
+
+<p><code>C-x k RET</code> to go back to the (renamed) buffer</p>
+
+<hr />
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
