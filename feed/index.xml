@@ -4,7 +4,7 @@
   <title><![CDATA[POEMS]]></title>
   <link href="http://poems.github.io/feed" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-05T08:43:43+00:00</updated>
+  <updated>2013-12-08T01:37:14+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Pieux Xi]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Maven Archetype Plugin]]></title>
+    <link href="http://poems.github.io/blog/2013/12/08/maven-archetype-plugin/"/>
+    <updated>2013-12-08T01:31:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/08/maven-archetype-plugin</id>
+    <content type="html"><![CDATA[<h2>Struts 2 Maven Archetype</h2>
+
+<h3>The Blank Archetype (struts2-archetype-blank)</h3>
+
+<h3>The Starter Archetype (struts2-archetype-starter)</h3>
+
+<p>Compared to the former, it adds more features like &ldquo;Spring Integration&rdquo;.</p>
+
+<h3>The Blank Convention Archetype (struts2-archetype-convention)</h3>
+
+<p>Features like &ldquo;Convention-based validation&rdquo;, &ldquo;GAE aware&rdquo;.</p>
+
+<h2>Creating an Application Using a Maven Archetyp</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mvn archetype:generate -B \
+</span><span class='line'>                       -DgroupId=tutorial \
+</span><span class='line'>                       -DartifactId=tutorial \
+</span><span class='line'>                       -DarchetypeGroupId=org.apache.struts \
+</span><span class='line'>                       -DarchetypeArtifactId=struts2-archetype-blank \
+</span><span class='line'>                       -DarchetypeVersion=&lt;version&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If the above command will fail because of missing archetypes in central repository, you can try to use staging repository like below</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mvn archetype:generate -DarchetypeCatalog=http://people.apache.org/builds/struts/&lt;version&gt;/m2-staging-repository/</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[About SSO: Everything I Need to Know]]></title>
+    <link href="http://poems.github.io/blog/2013/12/06/about-sso-everything-i-need-to-know/"/>
+    <updated>2013-12-06T08:01:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/06/about-sso-everything-i-need-to-know</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[NOTE: CAS Java Client]]></title>

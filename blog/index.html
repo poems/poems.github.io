@@ -7,7 +7,7 @@
 
 	<meta name="author" content="Pieux Xi">
 
-<meta name="description" content="CAS Client for Java 3.1 通过 web.xml 配置 Jasig CAS Client for Java CAS Client for Java 3.1/3.2 可以通过配置 web.xml 里的 context-params &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Struts 2 Maven Archetype The Blank Archetype (struts2-archetype-blank) The Starter Archetype (struts2-archetype-starter) Compared to the former, it &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -48,6 +48,102 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/12/08/maven-archetype-plugin/">
+			
+				Maven Archetype Plugin</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T01:31:00+00:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<h2>Struts 2 Maven Archetype</h2>
+
+<h3>The Blank Archetype (struts2-archetype-blank)</h3>
+
+<h3>The Starter Archetype (struts2-archetype-starter)</h3>
+
+<p>Compared to the former, it adds more features like &ldquo;Spring Integration&rdquo;.</p>
+
+<h3>The Blank Convention Archetype (struts2-archetype-convention)</h3>
+
+<p>Features like &ldquo;Convention-based validation&rdquo;, &ldquo;GAE aware&rdquo;.</p>
+
+<h2>Creating an Application Using a Maven Archetyp</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mvn archetype:generate -B \
+</span><span class='line'>                       -DgroupId=tutorial \
+</span><span class='line'>                       -DartifactId=tutorial \
+</span><span class='line'>                       -DarchetypeGroupId=org.apache.struts \
+</span><span class='line'>                       -DarchetypeArtifactId=struts2-archetype-blank \
+</span><span class='line'>                       -DarchetypeVersion=&lt;version&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If the above command will fail because of missing archetypes in central repository, you can try to use staging repository like below</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mvn archetype:generate -DarchetypeCatalog=http://people.apache.org/builds/struts/&lt;version&gt;/m2-staging-repository/</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/12/06/about-sso-everything-i-need-to-know/">
+			
+				About SSO: Everything I Need to Know</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-06T08:01:00+00:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1475,216 +1571,6 @@ Order of Required Filters</p>
 </span><span class='line'>=&gt; ufrom JRuby"
 </span><span class='line'>irb(main):003:0&gt;</span></code></pre></td></tr></table></div></figure>
 
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/24/ease-life-with-yasnippet/">
-			
-				Ease Life With YASnippet</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-24T01:44:00+00:00" pubdate data-updated="true">Nov 24<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		<p>安装使用<code>package-install</code>，实际上可以写一个简易方法避免重复劳动：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(defun require-package (package)
-</span><span class='line'>  "Install given PACKAGE."
-</span><span class='line'>  (unless (package-installed-p package)
-</span><span class='line'>    (unless (assoc package package-archive-contents)
-</span><span class='line'>      (package-refresh-contents))
-</span><span class='line'>    (package-install package)))
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>学习下其中的1个function</p>
-
-<p><code>assoc</code> is a built-in function in `C source code&#8217;.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(assoc KEY LIST)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Return non-nil if KEY is `equal&#8217; to the car of an element of LIST.
-The value is actually the first element of LIST whose car equals KEY.</p>
-
-<p>开始学习如何使用YASnippet。</p>
-
-<p><strong>1 组织你的 Snippets</strong> (<em>Organizing Snippets</em>)</p>
-
-<p>Snippet的定义是储存在文件系统的文件中。YASnippet的触发机制会找到这些snippet tables，然后展开。</p>
-
-<p>首先，新建一个目录：my-snippets，用来存放自定义的snippets。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(require 'yasnippet)
-</span><span class='line'>
-</span><span class='line'>(setq yas-snippet-dirs (concat user-emacs-directory "my-snippets"))
-</span><span class='line'>
-</span><span class='line'>(add-hook 'prog-mode-hook 'yas-minor-mode)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>看下是怎么组织snippets的（这是YASnippet自带的）：</p>
-
-<p><code>.yas.parent</code>文件可以共享其他目录下的snippets。</p>
-
-<p>如果有一个空的<code>.yas-make-groups</code>文件，会在 YASnippet Menu按照目录结构组织地更清晰。</p>
-
-<p><strong>2 展开你的 Snippets</strong> (<em>Traiggering expansion</em>)</p>
-
-<p>很多中方式能展开snippets，包括：</p>
-
-<ul>
-<li><p>By typing an abbrev, the snippet trigger key, and then pressing the key defined in yas/trigger-key (which defaults to &ldquo;TAB&rdquo;). This works in buffers where the minor mode yas/minor-mode is active;</p></li>
-<li><p>By invoking the command yas/insert-snippet (either by typing M-x yas/insert-snippet or its keybinding). This does not require yas/minor-mode to be active.</p></li>
-<li><p>By using hippie-expand</p></li>
-</ul>
-
-
-<p>以上是3中最常见的方法（虽然我不知道什么是 hippie-expand）。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/23/macro-and-defmacro-in-emacs/">
-			
-				Macro &amp; Defmacro in Emacs</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-23T16:42:00+00:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		<p>学习下Lisp的宏（macro）。</p>
-
-<p>首先，区别：Lisp宏和键盘宏（keyboard macro）是两个不同的概念。</p>
-
-<p>一个LISP宏(Lisp Macro)是一个扩展LISP语言的用户定义的结构.
- 宏不像函数那样对参数执行表达式. 它们只是在构造一个包括这些参数的表达式.</p>
-
-<blockquote><p>也就是，宏是一个结构，是在构造。就是Lisp非常牛逼的一点：Code as data。</p></blockquote>
-
-<p>首先看下语法定义：</p>
-
-<p><code>defmacro</code> is a Lisp macro in `byte-run.el&#8217;.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(defmacro NAME ARGLIST &optional DOCSTRING DECL &rest BODY)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Define NAME as a macro.
-When the macro is called, as in (NAME ARGS&hellip;),
-the function (lambda ARGLIST BODY&hellip;) is applied to
-the list ARGS&hellip; as it appears in the expression,
-and the result should be a form to be evaluated instead of the original.
-DECL is a declaration, optional, of the form (declare DECLS&hellip;) where
-DECLS is a list of elements of the form (PROP . VALUES).  These are
-interpreted according to `macro-declarations-alist&#8217;.
-The return value is undefined.</p>
-
-<p>好长的解释。</p>
-
-<p>看一个实例：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(defmacro inc (var)
-</span><span class='line'>  (list 'setq var (list '1+ var)))
-</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>注意一点：<code>(list '1+ var)</code> 开始时写成<code>(list '1+var)</code>，少写了一个空格。</p></blockquote>
-
-<p>定义了一个Lisp宏：<code>inc (var)</code>。这个macro的BODY是（按照list函数拼出来）:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(setq var (1+ var))</span></code></pre></td></tr></table></div></figure>
-
-
-<p>当然也可以这样展开宏：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(macroexpand '(inc x))</span></code></pre></td></tr></table></div></figure>
-
-
-<p>现在就可以用宏了：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(setq x 1)
-</span><span class='line'>(inc x)</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>解释:</p></blockquote>
-
-<p><code>list</code> 的用法</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>list is a built-in function in `C source code'.
-</span><span class='line'>
-</span><span class='line'>(list &rest OBJECTS)
-</span><span class='line'>
-</span><span class='line'>Return a newly created list with specified arguments as elements.
-</span><span class='line'>Any number of arguments, even zero arguments, are allowed.
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>宏还有一种写法，就是使用反引用（Backquote）。</p>
-
-<p>我们可以用 &lsquo; 引用一个对象并不执行.我们还可以用 反引用 ` 引用一个列表, 但是只是选择性的执行列表的元素.</p>
 
 		
 		
