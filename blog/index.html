@@ -7,7 +7,7 @@
 
 	<meta name="author" content="Pieux Xi">
 
-<meta name="description" content="Struts 2 Maven Archetype The Blank Archetype (struts2-archetype-blank) The Starter Archetype (struts2-archetype-starter) Compared to the former, it &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="假设 CAS Server 的域名是 cas.server.com CAS Server 的 webapp 是 spring web flow，登陆地址为：https://cas.%EF%BB%BFserver.com/cas/ &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -48,6 +48,52 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/12/08/note-everything-about-cas/">
+			
+				NOTE: Everything About CAS</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-08T02:12:00+00:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>假设 CAS Server 的域名是 cas.server.com</p>
+
+<p>CAS Server 的 webapp 是 spring web flow，登陆地址为：<a href="https://cas.%EF%BB%BFserver.com/cas/login">https://cas.%EF%BB%BFserver.com/cas/login</a></p>
+
+<p>登出地址为：<a href="https://cas.server.com/cas/logout">https://cas.server.com/cas/logout</a></p>
+
+<p>语言参数为：locale=zh_CN，locale=en</p>
+
+<p>除了配置 CAS Server 和 Client 外，需要配置环境，包括生成和导出导入证书，Tomcat配置SSL等。</p>
+
+<h2>CAS Server</h2>
+
+<h3>原理（认证流程）</h3>
+
+<p><img src="http://i.imgur.com/MDSRTIc.jpg" alt="CAS 基本模式" /></p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -106,38 +152,6 @@
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>mvn archetype:generate -DarchetypeCatalog=http://people.apache.org/builds/struts/&lt;version&gt;/m2-staging-repository/</span></code></pre></td></tr></table></div></figure>
 
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/12/06/about-sso-everything-i-need-to-know/">
-			
-				About SSO: Everything I Need to Know</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-06T08:01:00+00:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		
 
 		
 		

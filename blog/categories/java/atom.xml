@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | POEMS]]></title>
   <link href="http://poems.github.io/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-08T01:37:14+00:00</updated>
+  <updated>2013-12-08T02:27:36+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Pieux Xi]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[NOTE: Everything about CAS]]></title>
+    <link href="http://poems.github.io/blog/2013/12/08/note-everything-about-cas/"/>
+    <updated>2013-12-08T02:12:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/08/note-everything-about-cas</id>
+    <content type="html"><![CDATA[<p>假设 CAS Server 的域名是 cas.server.com</p>
+
+<p>CAS Server 的 webapp 是 spring web flow，登陆地址为：<a href="https://cas.%EF%BB%BFserver.com/cas/login">https://cas.%EF%BB%BFserver.com/cas/login</a></p>
+
+<p>登出地址为：<a href="https://cas.server.com/cas/logout">https://cas.server.com/cas/logout</a></p>
+
+<p>语言参数为：locale=zh_CN，locale=en</p>
+
+<p>除了配置 CAS Server 和 Client 外，需要配置环境，包括生成和导出导入证书，Tomcat配置SSL等。</p>
+
+<h2>CAS Server</h2>
+
+<h3>原理（认证流程）</h3>
+
+<p><img src="http://i.imgur.com/MDSRTIc.jpg" alt="CAS 基本模式" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Maven Archetype Plugin]]></title>
@@ -479,244 +502,6 @@ keytool -import -file server.crt -keystore $JAVA_HOME/jre/lib/security/cacerts -
     <content type="html"><![CDATA[<p>非常简单，<code>mvn package</code> 生成的 war 包，直接扔进 Tomcat 安装目录下的 webApps 目录。然后重启下 Tomcat。</p>
 
 <p>不需要任何额外的配置，默认是 localhost:8080/war_name/</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A example of writing Exception in java]]></title>
-    <link href="http://poems.github.io/blog/2013/11/23/a-example-of-writing-exception-in-java/"/>
-    <updated>2013-11-23T07:49:00+00:00</updated>
-    <id>http://poems.github.io/blog/2013/11/23/a-example-of-writing-exception-in-java</id>
-    <content type="html"><![CDATA[<p>记录在阅读 Jasig Cas 的源码学习到的 Java 知识。</p>
-
-<p>```
-public abstract class AuthenticationException extends Exception {</p>
-
-<p>```
-首先，这是一个 abstract class.</p>
-
-<p>```
-/<em>* The code to return for resolving to a message description. </em>/
-private String code;</p>
-
-<p>/<em>*
- * Method to return the unique identifier for this error type.
- *
- * @return the String identifier for this error type.
- </em>/
-public final String getCode() {</p>
-
-<pre><code>return this.code;
-</code></pre>
-
-<p>}</p>
-
-<p>```
-使用 code，来解析异常消息的描述。
-并且，code 有一个 get 方法，final 不可继承。</p>
-
-<p>```
-/<strong> The error type that provides additional info about the nature of the exception cause </strong>/
-private String type = &ldquo;error&rdquo;;</p>
-
-<p>/<em>*
- * Method to return the error type of this exception
- *
- * @return the String identifier for the cause of this error.
- </em>/
-public final String getType() {</p>
-
-<pre><code>return this.type;
-</code></pre>
-
-<p>}
-```
-额外的一个 field: type，维护导致异常的本质信息。</p>
-
-<p>下面是 <code>AuthenticationException</code> 的 constructors。</p>
-
-<p>```
-public AuthenticationException(final String code) {</p>
-
-<pre><code>this.code = code;
-</code></pre>
-
-<p>}
-```
-这是第1个 constructor。</p>
-
-<p>```
-public AuthenticationException(final String code, final String msg) {</p>
-
-<pre><code>super(msg);
-this.code = code;
-</code></pre>
-
-<p>}</p>
-
-<p>public AuthenticationException(final String code, final String msg, final String type) {</p>
-
-<pre><code>super(msg);
-this.code = code;
-this.type = type;
-</code></pre>
-
-<p>}
-<code>``
-第2个和第3个 constructor，需要学习的是</code>super(msg)`。</p>
-
-<p>```
-/<em>*
- * Constructor that takes a code description of the error and the chained
- * exception. These codes normally have a corresponding entries in the
- * messages file for the internationalization of error messages.
- *
- * @param code The short unique identifier for this error.
- * @param throwable The chained exception for this AuthenticationException
- </em>/
-public AuthenticationException(final String code, final Throwable throwable) {</p>
-
-<pre><code>super(throwable);
-this.code = code;
-</code></pre>
-
-<p>}
-<code>``
-最后一个 constructor，需要学习的是</code>final Throwable throwable`，这块不是很懂。按描述是能链式异常。
-查看了 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html#Exception(java.lang.Throwable)">Java Exception 文档</a>，它有一个 constructor：</p>
-
-<p><code>
-public Exception(Throwable cause)
-</code>
-它的作用是：用指定的 cause 和 详细的 message(<code>cause==null ? null : cause.toString()</code>)构造新的异常。
-它的作用就是一个 &ldquo;wrapper"。</p>
-
-<p>完整源码见：</p>
-
-<p>```
-/<em>
- * Licensed to Jasig under one or more contributor license
- * agreements. See the NOTICE file distributed with this work
- * for additional information regarding copyright ownership.
- * Jasig licenses this file to you under the Apache License,
- * Version 2.0 (the &ldquo;License&rdquo;); you may not use this file
- * except in compliance with the License.  You may obtain a
- * copy of the License at the following location:
- *
- *   <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * &ldquo;AS IS&rdquo; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- </em>/
-package org.jasig.cas.authentication.handler;</p>
-
-<p>/<em>*
- * The most generic type of authentication exception that one can catch if not
- * sure what specific implementation will be thrown. Top of the tree of all
- * other AuthenticationExceptions.
- *
- * @author Scott Battaglia
- * @version $Revision$ $Date$
- * @since 3.0
- </em>/
-public abstract class AuthenticationException extends Exception {</p>
-
-<pre><code>/** Serializable ID. */
-private static final long serialVersionUID = 3906648604830611762L;
-
-/** The code to return for resolving to a message description. */
-private String code;
-
-/** The error type that provides additional info about the nature of the exception cause **/
-private String type = "error";
-
-/**
- * Constructor that takes a code description of the error. These codes
- * normally have a corresponding entries in the messages file for the
- * internationalization of error messages.
- *
- * @param code The short unique identifier for this error.
- */
-public AuthenticationException(final String code) {
-    this.code = code;
-}
-
-/**
- * Constructor that takes a &lt;code&gt;code&lt;/code&gt; description of the error along with the exception
- * &lt;code&gt;msg&lt;/code&gt; generally for logging purposes. These codes normally have a corresponding
- * entries in the messages file for the internationalization of error messages.
- *
- * @param code The short unique identifier for this error.
- * @param msg The error message associated with this exception for additional logging purposes.
- */
-public AuthenticationException(final String code, final String msg) {
-    super(msg);
-    this.code = code;
-}
-
-/**
- * Constructor that takes a &lt;code&gt;code&lt;/code&gt; description of the error along with the exception
- * &lt;code&gt;msg&lt;/code&gt; generally for logging purposes and the &lt;code&gt;type&lt;/code&gt; of the error that originally caused the exception.
- * These codes normally have a corresponding entries in the messages file for the internationalization of error messages.
- *
- * @param code The short unique identifier for this error.
- * @param msg The error message associated with this exception for additional logging purposes.
- * @param type The type of the error message that caused the exception to be thrown. By default,
- * all errors are considered of &lt;code&gt;error&lt;/code&gt;.
- */
-public AuthenticationException(final String code, final String msg, final String type) {
-    super(msg);
-    this.code = code;
-    this.type = type;
-}
-
-/**
- * Constructor that takes a code description of the error and the chained
- * exception. These codes normally have a corresponding entries in the
- * messages file for the internationalization of error messages.
- *
- * @param code The short unique identifier for this error.
- * @param throwable The chained exception for this AuthenticationException
- */
-public AuthenticationException(final String code, final Throwable throwable) {
-    super(throwable);
-    this.code = code;
-}
-
-/**
- * Method to return the error type of this exception
- *
- * @return the String identifier for the cause of this error.
- */
-public final String getType() {
-    return this.type;
-}
-
-/**
- * Method to return the unique identifier for this error type.
- *
- * @return the String identifier for this error type.
- */
-public final String getCode() {
-    return this.code;
-}
-
-@Override
-public final String toString() {
-    String msg = getCode();
-    if (getMessage() != null &amp;&amp; getMessage().trim().length() &gt; 0)
-        msg = ":" + getMessage();
-    return msg;
-}
-</code></pre>
-
-<p>}</p>
-
-<p>```</p>
 ]]></content>
   </entry>
   

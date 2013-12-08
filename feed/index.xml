@@ -4,7 +4,7 @@
   <title><![CDATA[POEMS]]></title>
   <link href="http://poems.github.io/feed" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-08T01:37:14+00:00</updated>
+  <updated>2013-12-08T02:27:36+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Pieux Xi]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[NOTE: Everything about CAS]]></title>
+    <link href="http://poems.github.io/blog/2013/12/08/note-everything-about-cas/"/>
+    <updated>2013-12-08T02:12:00+00:00</updated>
+    <id>http://poems.github.io/blog/2013/12/08/note-everything-about-cas</id>
+    <content type="html"><![CDATA[<p>假设 CAS Server 的域名是 cas.server.com</p>
+
+<p>CAS Server 的 webapp 是 spring web flow，登陆地址为：<a href="https://cas.%EF%BB%BFserver.com/cas/login">https://cas.%EF%BB%BFserver.com/cas/login</a></p>
+
+<p>登出地址为：<a href="https://cas.server.com/cas/logout">https://cas.server.com/cas/logout</a></p>
+
+<p>语言参数为：locale=zh_CN，locale=en</p>
+
+<p>除了配置 CAS Server 和 Client 外，需要配置环境，包括生成和导出导入证书，Tomcat配置SSL等。</p>
+
+<h2>CAS Server</h2>
+
+<h3>原理（认证流程）</h3>
+
+<p><img src="http://i.imgur.com/MDSRTIc.jpg" alt="CAS 基本模式" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Maven Archetype Plugin]]></title>
@@ -51,15 +74,6 @@
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>mvn archetype:generate -DarchetypeCatalog=http://people.apache.org/builds/struts/&lt;version&gt;/m2-staging-repository/</span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[About SSO: Everything I Need to Know]]></title>
-    <link href="http://poems.github.io/blog/2013/12/06/about-sso-everything-i-need-to-know/"/>
-    <updated>2013-12-06T08:01:00+00:00</updated>
-    <id>http://poems.github.io/blog/2013/12/06/about-sso-everything-i-need-to-know</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   

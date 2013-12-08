@@ -3,12 +3,11 @@
 <html lang="en-GB">
 <head>
 	<meta charset="utf-8">
-	<title>About SSO: Everything I Need to Know  | POEMS</title>
+	<title>NOTE: Everything about CAS  | POEMS</title>
 
 	<meta name="author" content="Pieux Xi">
 
-<meta name="description" content="
-"> <meta name="keywords" content="">
+<meta name="description" content="假设 CAS Server 的域名是 cas.server.com CAS Server 的 webapp 是 spring web flow，登陆地址为：https://cas.%EF%BB%BFserver.com/cas/login &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -50,7 +49,7 @@
 
 	<div id="content" class="inner"><article class="post">
 	<header>
-		<h2 class="title">About SSO: Everything I Need to Know</h2>
+		<h2 class="title">NOTE: Everything About CAS</h2>
 		<div class="meta date">
 
 
@@ -63,9 +62,23 @@
   
 
 
-<time datetime="2013-12-06T08:01:00+00:00" pubdate data-updated="true">Dec 6<span>th</span>, 2013</time></div>
+<time datetime="2013-12-08T02:12:00+00:00" pubdate data-updated="true">Dec 8<span>th</span>, 2013</time></div>
 	</header>
-	<div class="entry-content">
+	<div class="entry-content"><p>假设 CAS Server 的域名是 cas.server.com</p>
+
+<p>CAS Server 的 webapp 是 spring web flow，登陆地址为：<a href="https://cas.%EF%BB%BFserver.com/cas/login">https://cas.%EF%BB%BFserver.com/cas/login</a></p>
+
+<p>登出地址为：<a href="https://cas.server.com/cas/logout">https://cas.server.com/cas/logout</a></p>
+
+<p>语言参数为：locale=zh_CN，locale=en</p>
+
+<p>除了配置 CAS Server 和 Client 外，需要配置环境，包括生成和导出导入证书，Tomcat配置SSL等。</p>
+
+<h2>CAS Server</h2>
+
+<h3>原理（认证流程）</h3>
+
+<p><img src="http://i.imgur.com/MDSRTIc.jpg" alt="CAS 基本模式" /></p>
 </div>
 
 </article>
@@ -74,19 +87,19 @@
 	<div class="share">
 	  <!-- <ul> -->
 	  <!--   <li>
-  <a href="https://twitter.com/intent/tweet?text=About SSO: Everything I Need to Know by @&url=http://poems.github.io/blog/2013/12/06/about-sso-everything-i-need-to-know/" title="Share About SSO: Everything I Need to Know on Twitter">
+  <a href="https://twitter.com/intent/tweet?text=NOTE: Everything about CAS by @&url=http://poems.github.io/blog/2013/12/08/note-everything-about-cas/" title="Share NOTE: Everything about CAS on Twitter">
     <img src="/images/social/twitter.png" />
   </a>
 </li>
  -->
 	  <!--   <li>
-  <a href="https://www.facebook.com/sharer.php?u=http://poems.github.io/blog/2013/12/06/about-sso-everything-i-need-to-know/" title="Share About SSO: Everything I Need to Know on Facebook">
+  <a href="https://www.facebook.com/sharer.php?u=http://poems.github.io/blog/2013/12/08/note-everything-about-cas/" title="Share NOTE: Everything about CAS on Facebook">
     <img src="/images/social/facebook.png" />
   </a>
 </li>
  -->
 	  <!--   <li>
-  <a href="https://plus.google.com/share?url=http://poems.github.io/blog/2013/12/06/about-sso-everything-i-need-to-know/" title="Share About SSO: Everything I Need to Know on Google Plus">
+  <a href="https://plus.google.com/share?url=http://poems.github.io/blog/2013/12/08/note-everything-about-cas/" title="Share NOTE: Everything about CAS on Google Plus">
     <img src="/images/social/google.png" />
   </a>
 </li>
