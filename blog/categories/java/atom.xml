@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Java | POEMS]]></title>
   <link href="http://poems.github.io/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://poems.github.io/"/>
-  <updated>2013-12-12T10:23:43+00:00</updated>
+  <updated>2013-12-13T03:13:24+00:00</updated>
   <id>http://poems.github.io/</id>
   <author>
     <name><![CDATA[Pieux Xi]]></name>
@@ -166,6 +166,71 @@ Authority，CA）如VeriSign（www.verisign.com）和Thawte（www.thawte.com）
 过SUN公司提供的keytool工具就可以创建这样的证书。</p>
 
 <p>即，只需要数据加密传输，而不需要额外的一层身份校验。</p>
+
+<h2>使用 keytool 工具</h2>
+
+<p>这方面的参考文章很多。</p>
+
+<p>对于 .Net，请参考：
+<a href="http://www.cnblogs.com/zhenyulu/archive/2013/01/22/2870838.html">Yale CAS + .net Client 实现 SSO（1）</a></p>
+
+<p>对于 Java，请参考：
+<a href="http://blog.csdn.net/small_love/article/details/6664831">CAS实现单点登录（SSO）经典完整教程</a>
+。</p>
+
+<p>这里唯一需要注意的一点是：生成证书时，要求输入名称和姓氏(First Name
+and Last Name)时，需要输入部署 cas server 的计算机名，比如：
+pieux-macbook-pro.local 或者 tech-w-xishanshan。在后面的配置 cas
+client 的 Authentication Filter 和 Validation Filter 时，配置的服务器
+地址应该也是以计算机名开头，不要使用 localhost 或者 ip：</p>
+
+<p>```
+&lt;init-param></p>
+
+<pre><code>&lt;param-name&gt;casServerLoginUrl&lt;/param-name&gt;
+&lt;param-value&gt;https://pieux-macbook-pro.local:8443/cas/login&lt;/param-value&gt;
+</code></pre>
+
+<p>&lt;/init-param>
+&hellip;
+&lt;filter-name>CAS Validation Filter&lt;/filter-name>
+&lt;filter-class>org.jasig.cas.client.validation.Saml11TicketValidationFilter&lt;/filter-class>
+&lt;init-param></p>
+
+<pre><code>&lt;param-name&gt;casServerUrlPrefix&lt;/param-name&gt;
+&lt;param-value&gt;https://pieux-macbook-pro.local:8443/cas&lt;/param-value&gt;
+</code></pre>
+
+<p>&lt;/init-param>
+```</p>
+
+<h2>自我签名证书在开发中的注意事项</h2>
+
+<p>如果 cas server 和 cas client 都部署在相同的机器上（一般是开发过程中），
+那如果你按照上面和上面提到的参考文章的步骤，就应该不会有错误了。</p>
+
+<p>但是，有一个大坑。如果 cas server 和 cas client 不是部署在一台机器上，
+你很有可能会遇到一个<strong>异常</strong>是：</p>
+
+<p><code>
+sun.security.validator.ValidatorException: PKIX path building failed:
+</code></p>
+
+<p> The problem here is that the CAS client does not trust the
+ certificate presented by the CAS server; most often this occurs
+ because of using a self-signed certificate on the CAS server.</p>
+
+<p>该问题一般是 cas client 不信任 cas server 展示的证书，而且绝大多数情况
+下（按我目前遇到的，就是所有情况下），是 cas server 向 client 展示的是
+self-signed certificate。</p>
+
+<p>而且，使用SAML11的时候会报错（难道是SAML11也需要检验证书的真实性？），
+使用CAS20就不会报错。因为按理说，SSL可以不需要证书，只利用加密通信的特
+性。这块持续挖掘下。</p>
+
+<p>那怎么解决这个问题呢？很简单，让 client 信任 server 的证书就行了。把
+server 端生成的证书拷贝到 client 端部署的机器上，然后用 keytool 工具导
+入到 client 机器 JDK 的 cacerts 里。</p>
 
 <h2>SSL握手通信过程</h2>
 
